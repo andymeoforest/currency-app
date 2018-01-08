@@ -4,7 +4,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import {CreateaccountPage } from '../pages/createaccount/createaccount';
+import {LoginPage} from '../pages/login/login';
+import {LoginwithfacebookPage} from '../pages/loginwithfacebook/loginwithfacebook';
+import {LoginwithgmailPage } from '../pages/loginwithgmail/loginwithgmail';
+import {ChangethemePage} from '../pages/changetheme/changetheme';
+import {RatealertPage} from '../pages/ratealert/ratealert';
+import {FeedbackPage} from '../pages/feedback/feedback';
 
 @Component({
   templateUrl: 'app.html'
@@ -22,7 +28,15 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      {title:"Create Account", component: CreateaccountPage},
+      {title:"Login with Email", component:LoginPage},
+      {title:"Login with Facebook", component: LoginwithfacebookPage},
+      {title: "Login with Gmail", component: LoginwithgmailPage},
+      {title:"Change Theme", component: ChangethemePage},
+      {title:"Rate Alert", component: RatealertPage},
+      {title:"Give us feedback!", component: FeedbackPage},
+
+
     ];
 
   }
