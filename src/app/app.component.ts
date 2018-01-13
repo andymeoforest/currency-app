@@ -11,6 +11,7 @@ import {LoginwithgmailPage } from '../pages/loginwithgmail/loginwithgmail';
 import {ChangethemePage} from '../pages/changetheme/changetheme';
 import {RatealertPage} from '../pages/ratealert/ratealert';
 import {FeedbackPage} from '../pages/feedback/feedback';
+import {SettingsPage} from '../pages/settings/settings';
 
 @Component({
   templateUrl: 'app.html'
@@ -35,6 +36,7 @@ export class MyApp {
       {title:"Change Theme", component: ChangethemePage},
       {title:"Rate Alert", component: RatealertPage},
       {title:"Give us feedback!", component: FeedbackPage},
+      {title: "Settings", component: SettingsPage}
 
 
     ];

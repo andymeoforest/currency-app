@@ -11,6 +11,7 @@ import { LoginwithgmailPage } from '../pages/loginwithgmail/loginwithgmail';
 import { ChangethemePage } from '../pages/changetheme/changetheme';
 import { RatealertPage } from '../pages/ratealert/ratealert';
 import { FeedbackPage } from '../pages/feedback/feedback';
+import {SettingsPage} from '../pages/settings/settings';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -27,7 +28,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ChangethemePage,
     ChangethemePage,
     RatealertPage,
-    FeedbackPage
+    FeedbackPage,
+    SettingsPage
 
   ],
   imports: [
@@ -44,7 +46,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LoginwithgmailPage,
     ChangethemePage,
     RatealertPage,
-    FeedbackPage
+    FeedbackPage,
+    SettingsPage
 
 
   ],
