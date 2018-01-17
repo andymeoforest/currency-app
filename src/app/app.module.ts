@@ -12,10 +12,10 @@ import { ChangethemePage } from '../pages/changetheme/changetheme';
 import { RatealertPage } from '../pages/ratealert/ratealert';
 import { FeedbackPage } from '../pages/feedback/feedback';
 import {SettingsPage} from '../pages/settings/settings';
-
-
+import {CurrencylistPage} from '../pages/currencylist/currencylist';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AllCurrenciesPage } from '../pages/all-currencies/all-currencies';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ChangethemePage,
     RatealertPage,
     FeedbackPage,
-    SettingsPage
+    SettingsPage,
+    CurrencylistPage,
+    AllCurrenciesPage
 
   ],
   imports: [
@@ -47,8 +49,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ChangethemePage,
     RatealertPage,
     FeedbackPage,
-    SettingsPage
-
+    SettingsPage,
+    CurrencylistPage,
+    AllCurrenciesPage
 
   ],
   providers: [

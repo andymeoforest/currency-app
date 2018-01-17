@@ -12,7 +12,7 @@ import {ChangethemePage} from '../pages/changetheme/changetheme';
 import {RatealertPage} from '../pages/ratealert/ratealert';
 import {FeedbackPage} from '../pages/feedback/feedback';
 import {SettingsPage} from '../pages/settings/settings';
-
+import { CurrencylistPage} from '../pages/currencylist/currencylist'
 @Component({
   templateUrl: 'app.html'
 })
@@ -36,6 +36,7 @@ export class MyApp {
       {title:"Change Theme", component: ChangethemePage},
       {title:"Rate Alert", component: RatealertPage},
       {title:"Give us feedback!", component: FeedbackPage},
+      {title:"Currency List", component: CurrencylistPage},
       {title: "Settings", component: SettingsPage}
 
 
