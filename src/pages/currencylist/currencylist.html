@@ -1,0 +1,43 @@
+<ion-header >
+  <ion-navbar color="primary">
+    <div style="float:left">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+    </div>
+
+    <div style="float:right">
+        <button ion-button icon-right (click) = "addCurrency()">
+            <ion-icon name="add"></ion-icon>
+          </button>
+    </div>
+
+    <div>
+        <ion-title text-center>Currency List</ion-title>
+    </div>
+
+    <!-- Float the icon right -->
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list  *ngFor = "let obj of myList; let i = index;">
+    <ion-item-sliding  >
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="">
+        </ion-avatar>
+        <h2>{{obj.code}} - {{obj.name}}</h2>
+      </ion-item>
+        <ion-item-options slide="left">
+          <button ion-button color="danger" (click)="deleteCurrency(i)">Delete</button>
+        </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+
+
+
+
