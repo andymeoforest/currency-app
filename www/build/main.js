@@ -1,12 +1,57 @@
-webpackJsonp([7],{
+webpackJsonp([10],{
 
 /***/ 100:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChangethemePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the ChangethemePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ChangethemePage = (function () {
+    function ChangethemePage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    ChangethemePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ChangethemePage');
+    };
+    ChangethemePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-changetheme',template:/*ion-inline-start:"/Users/andyle/currency-app/src/pages/changetheme/changetheme.html"*/'<ion-header >\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title text-center>Change Theme</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/andyle/currency-app/src/pages/changetheme/changetheme.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    ], ChangethemePage);
+    return ChangethemePage;
+}());
+
+//# sourceMappingURL=changetheme.js.map
+
+/***/ }),
+
+/***/ 101:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateaccountPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -34,7 +79,7 @@ var CreateaccountPage = (function () {
     };
     CreateaccountPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-createaccount',template:/*ion-inline-start:"/Users/andyle/Desktop/temp/currency-app/src/pages/createaccount/createaccount.html"*/'<ion-header >\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title text-center>Create Account</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/andyle/Desktop/temp/currency-app/src/pages/createaccount/createaccount.html"*/,
+            selector: 'page-createaccount',template:/*ion-inline-start:"/Users/andyle/currency-app/src/pages/createaccount/createaccount.html"*/'<ion-header >\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title text-center>Create Account</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/andyle/currency-app/src/pages/createaccount/createaccount.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], CreateaccountPage);
@@ -45,13 +90,77 @@ var CreateaccountPage = (function () {
 
 /***/ }),
 
-/***/ 101:
+/***/ 102:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CurrencylistPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__all_currencies_all_currencies__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__data_myCurrencies__ = __webpack_require__(255);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the CurrencylistPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var CurrencylistPage = (function () {
+    function CurrencylistPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.myCurrencies = new __WEBPACK_IMPORTED_MODULE_3__data_myCurrencies__["a" /* MyCurrencies */]();
+        this.myCurrencies.sortCurrencyByCode();
+        this.myCurrencies.myCurrencyList;
+        this.myCurrencies.setFavorCurrency("CAD");
+        this.myCurrencies.setFavorCurrency("USD");
+        this.myCurrencies.setFavorCurrency("EUR");
+        console.log(this.myCurrencies);
+    }
+    CurrencylistPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad CurrencylistPage');
+    };
+    CurrencylistPage.prototype.addCurrency = function () {
+        console.log("push");
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__all_currencies_all_currencies__["a" /* AllCurrenciesPage */], { list: this.myCurrencies });
+    };
+    CurrencylistPage.prototype.deleteCurrency = function (index) {
+        console.log(index);
+        this.myCurrencies.myCurrencyList[index].isfavor = false;
+    };
+    CurrencylistPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-currencylist',template:/*ion-inline-start:"/Users/andyle/currency-app/src/pages/currencylist/currencylist.html"*/'<ion-header >\n  <ion-navbar color="primary">\n    <div style="float:left">\n        <button ion-button menuToggle>\n            <ion-icon name="menu"></ion-icon>\n          </button>\n    </div>\n\n    <div style="float:right">\n        <button ion-button icon-right (click) = "addCurrency()">\n            <ion-icon name="add"></ion-icon>\n          </button>\n    </div>\n\n    <div>\n        <ion-title text-center>Currency List</ion-title>\n    </div>\n\n    <!-- Float the icon right -->\n\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list  *ngFor = "let obj of myCurrencies.myCurrencyList; let i = index;">\n    <ion-item-sliding *ngIf = "obj.isfavor" >\n      <ion-item >\n        <ion-avatar item-start>\n          <img src="../assets/imgs/{{obj.currency.imgUrl}}">\n        </ion-avatar>\n        <h2>{{obj.currency.code}} - {{obj.currency.name}}</h2>\n      </ion-item>\n        <ion-item-options slide="left">\n          <button ion-button color="danger" (click)="deleteCurrency(i)">Delete</button>\n        </ion-item-options>\n    </ion-item-sliding>\n  </ion-list>\n</ion-content>\n\n\n\n\n'/*ion-inline-end:"/Users/andyle/currency-app/src/pages/currencylist/currencylist.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    ], CurrencylistPage);
+    return CurrencylistPage;
+}());
+
+//# sourceMappingURL=currencylist.js.map
+
+/***/ }),
+
+/***/ 103:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FeedbackPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -79,7 +188,7 @@ var FeedbackPage = (function () {
     };
     FeedbackPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-feedback',template:/*ion-inline-start:"/Users/andyle/Desktop/temp/currency-app/src/pages/feedback/feedback.html"*/'<ion-header >\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title text-center>Give Feedback</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/andyle/Desktop/temp/currency-app/src/pages/feedback/feedback.html"*/,
+            selector: 'page-feedback',template:/*ion-inline-start:"/Users/andyle/currency-app/src/pages/feedback/feedback.html"*/'<ion-header >\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title text-center>Give Feedback</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/andyle/currency-app/src/pages/feedback/feedback.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], FeedbackPage);
@@ -90,13 +199,13 @@ var FeedbackPage = (function () {
 
 /***/ }),
 
-/***/ 102:
+/***/ 104:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -124,7 +233,7 @@ var LoginPage = (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/Users/andyle/Desktop/temp/currency-app/src/pages/login/login.html"*/'<ion-header >\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title text-center>Login with email</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/andyle/Desktop/temp/currency-app/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"/Users/andyle/currency-app/src/pages/login/login.html"*/'<ion-header >\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title text-center>Login with email</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/andyle/currency-app/src/pages/login/login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], LoginPage);
@@ -135,13 +244,13 @@ var LoginPage = (function () {
 
 /***/ }),
 
-/***/ 103:
+/***/ 105:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginwithfacebookPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -169,7 +278,7 @@ var LoginwithfacebookPage = (function () {
     };
     LoginwithfacebookPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-loginwithfacebook',template:/*ion-inline-start:"/Users/andyle/Desktop/temp/currency-app/src/pages/loginwithfacebook/loginwithfacebook.html"*/'<ion-header >\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title text-center>Login with Facebook</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/andyle/Desktop/temp/currency-app/src/pages/loginwithfacebook/loginwithfacebook.html"*/,
+            selector: 'page-loginwithfacebook',template:/*ion-inline-start:"/Users/andyle/currency-app/src/pages/loginwithfacebook/loginwithfacebook.html"*/'<ion-header >\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title text-center>Login with Facebook</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/andyle/currency-app/src/pages/loginwithfacebook/loginwithfacebook.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], LoginwithfacebookPage);
@@ -180,13 +289,13 @@ var LoginwithfacebookPage = (function () {
 
 /***/ }),
 
-/***/ 104:
+/***/ 106:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginwithgmailPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -214,7 +323,7 @@ var LoginwithgmailPage = (function () {
     };
     LoginwithgmailPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-loginwithgmail',template:/*ion-inline-start:"/Users/andyle/Desktop/temp/currency-app/src/pages/loginwithgmail/loginwithgmail.html"*/'<ion-header >\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title text-center>Login with Gmail</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/andyle/Desktop/temp/currency-app/src/pages/loginwithgmail/loginwithgmail.html"*/,
+            selector: 'page-loginwithgmail',template:/*ion-inline-start:"/Users/andyle/currency-app/src/pages/loginwithgmail/loginwithgmail.html"*/'<ion-header >\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title text-center>Login with Gmail</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/andyle/currency-app/src/pages/loginwithgmail/loginwithgmail.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], LoginwithgmailPage);
@@ -225,13 +334,13 @@ var LoginwithgmailPage = (function () {
 
 /***/ }),
 
-/***/ 105:
+/***/ 107:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RatealertPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -259,7 +368,7 @@ var RatealertPage = (function () {
     };
     RatealertPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-ratealert',template:/*ion-inline-start:"/Users/andyle/Desktop/temp/currency-app/src/pages/ratealert/ratealert.html"*/'<ion-header >\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title text-center>Rate Alert</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/andyle/Desktop/temp/currency-app/src/pages/ratealert/ratealert.html"*/,
+            selector: 'page-ratealert',template:/*ion-inline-start:"/Users/andyle/currency-app/src/pages/ratealert/ratealert.html"*/'<ion-header >\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title text-center>Rate Alert</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/andyle/currency-app/src/pages/ratealert/ratealert.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], RatealertPage);
@@ -270,7 +379,52 @@ var RatealertPage = (function () {
 
 /***/ }),
 
-/***/ 116:
+/***/ 108:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SettingsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the SettingsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var SettingsPage = (function () {
+    function SettingsPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    SettingsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad SettingsPage');
+    };
+    SettingsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-settings',template:/*ion-inline-start:"/Users/andyle/currency-app/src/pages/settings/settings.html"*/'<ion-header >\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title text-center>Settings</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/andyle/currency-app/src/pages/settings/settings.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    ], SettingsPage);
+    return SettingsPage;
+}());
+
+//# sourceMappingURL=settings.js.map
+
+/***/ }),
+
+/***/ 119:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -283,45 +437,53 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 116;
+webpackEmptyAsyncContext.id = 119;
 
 /***/ }),
 
-/***/ 157:
+/***/ 160:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"../pages/all-currencies/all-currencies.module": [
+		283,
+		9
+	],
 	"../pages/changetheme/changetheme.module": [
-		278,
-		16
+		284,
+		8
 	],
 	"../pages/createaccount/createaccount.module": [
-		279,
-		15
+		285,
+		7
+	],
+	"../pages/currencylist/currencylist.module": [
+		286,
+		6
 	],
 	"../pages/feedback/feedback.module": [
-		280,
-		14
+		287,
+		5
 	],
 	"../pages/login/login.module": [
-		281,
-		13
+		288,
+		4
 	],
 	"../pages/loginwithfacebook/loginwithfacebook.module": [
-		282,
-		12
+		289,
+		3
 	],
 	"../pages/loginwithgmail/loginwithgmail.module": [
-		283,
-		11
+		290,
+		2
 	],
 	"../pages/ratealert/ratealert.module": [
-		284,
-		10
+		291,
+		1
 	],
 	"../pages/settings/settings.module": [
-		285,
-		9
+		292,
+		0
 	]
 };
 function webpackAsyncContext(req) {
@@ -335,18 +497,18 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 157;
+webpackAsyncContext.id = 160;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 201:
+/***/ 204:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -364,7 +526,7 @@ var HomePage = (function () {
     }
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/andyle/Desktop/temp/currency-app/src/pages/home/home.html"*/'<ion-header >\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title text-center>Currency</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <!--- Do not delete button. Testing the navigation. -->\n  <button ion-button secondary menuToggle>Toggle Menu</button>\n</ion-content>\n'/*ion-inline-end:"/Users/andyle/Desktop/temp/currency-app/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/andyle/currency-app/src/pages/home/home.html"*/'<ion-header >\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title text-center>Currency</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <!--- Do not delete button. Testing the navigation. -->\n  <button ion-button secondary menuToggle>Toggle Menu</button>\n</ion-content>\n'/*ion-inline-end:"/Users/andyle/currency-app/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], HomePage);
@@ -375,13 +537,13 @@ var HomePage = (function () {
 
 /***/ }),
 
-/***/ 202:
+/***/ 205:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(229);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -389,32 +551,36 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 226:
+/***/ 229:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(269);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_createaccount_createaccount__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_login_login__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_loginwithfacebook_loginwithfacebook__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_loginwithgmail_loginwithgmail__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_changetheme_changetheme__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_ratealert_ratealert__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_feedback_feedback__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_settings_settings__ = __webpack_require__(286);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_status_bar__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_splash_screen__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_createaccount_createaccount__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_login_login__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_loginwithfacebook_loginwithfacebook__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_loginwithgmail_loginwithgmail__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_changetheme_changetheme__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_ratealert_ratealert__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_feedback_feedback__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_settings_settings__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_currencylist_currencylist__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_all_currencies_all_currencies__ = __webpack_require__(99);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -446,14 +612,18 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_9__pages_changetheme_changetheme__["a" /* ChangethemePage */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_ratealert_ratealert__["a" /* RatealertPage */],
                 __WEBPACK_IMPORTED_MODULE_11__pages_feedback_feedback__["a" /* FeedbackPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_settings_settings__["a" /* SettingsPage */]
+                __WEBPACK_IMPORTED_MODULE_12__pages_settings_settings__["a" /* SettingsPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_currencylist_currencylist__["a" /* CurrencylistPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_all_currencies_all_currencies__["a" /* AllCurrenciesPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
+                        { loadChildren: '../pages/all-currencies/all-currencies.module#AllCurrenciesPageModule', name: 'AllCurrenciesPage', segment: 'all-currencies', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/changetheme/changetheme.module#ChangethemePageModule', name: 'ChangethemePage', segment: 'changetheme', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/createaccount/createaccount.module#CreateaccountPageModule', name: 'CreateaccountPage', segment: 'createaccount', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/currencylist/currencylist.module#CurrencylistPageModule', name: 'CurrencylistPage', segment: 'currencylist', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/feedback/feedback.module#FeedbackPageModule', name: 'FeedbackPage', segment: 'feedback', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/loginwithfacebook/loginwithfacebook.module#LoginwithfacebookPageModule', name: 'LoginwithfacebookPage', segment: 'loginwithfacebook', priority: 'low', defaultHistory: [] },
@@ -474,11 +644,13 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_9__pages_changetheme_changetheme__["a" /* ChangethemePage */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_ratealert_ratealert__["a" /* RatealertPage */],
                 __WEBPACK_IMPORTED_MODULE_11__pages_feedback_feedback__["a" /* FeedbackPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_settings_settings__["a" /* SettingsPage */]
+                __WEBPACK_IMPORTED_MODULE_12__pages_settings_settings__["a" /* SettingsPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_currencylist_currencylist__["a" /* CurrencylistPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_all_currencies_all_currencies__["a" /* AllCurrenciesPage */]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_13__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_14__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__["a" /* SplashScreen */],
                 { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] }
             ]
         })
@@ -490,24 +662,228 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 269:
+/***/ 255:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyCurrencies; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__allCurrencies__ = __webpack_require__(256);
+
+var MyCurrencies = (function () {
+    function MyCurrencies() {
+        this.addAllCurrency();
+    }
+    MyCurrencies.prototype.addAllCurrency = function () {
+        var _this = this;
+        this.myCurrencyList = [];
+        __WEBPACK_IMPORTED_MODULE_0__allCurrencies__["a" /* ALLCURRENCIES */].forEach(function (element) {
+            _this.myCurrencyList.push({ key: element.code, currency: element, isfavor: false });
+        });
+    };
+    MyCurrencies.prototype.setFavorCurrency = function (key) {
+        var index = this.myCurrencyList.findIndex(function (obj) { return obj.key == key; });
+        this.myCurrencyList[index].isfavor = true;
+    };
+    MyCurrencies.prototype.removeFacoverCurrency = function (key) {
+        var index = this.myCurrencyList.findIndex(function (obj) { return obj.key == key; });
+        this.myCurrencyList[index].isfavor = false;
+    };
+    MyCurrencies.prototype.sortCurrencyByCode = function () {
+        this.myCurrencyList = this.myCurrencyList.sort(function (a, b) {
+            if (a.key.toString() < b.key.toString())
+                return -1;
+            if (a.key.toString() > b.key.toString())
+                return 1;
+            return 0;
+        });
+    };
+    return MyCurrencies;
+}());
+
+var MyCurrency = (function () {
+    function MyCurrency() {
+    }
+    return MyCurrency;
+}());
+//# sourceMappingURL=myCurrencies.js.map
+
+/***/ }),
+
+/***/ 256:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ALLCURRENCIES; });
+var ALLCURRENCIES = [
+    {
+        name: 'Canadian Dollar',
+        code: 'CAD',
+        imgUrl: 'CAD.png'
+    },
+    {
+        name: 'Japanese Yen',
+        code: 'JPY',
+        imgUrl: ''
+    },
+    {
+        name: 'Australian Dollar',
+        code: 'AUD',
+        imgUrl: ''
+    },
+    {
+        name: 'Barbadian or Bajan Dollar',
+        code: 'BBD',
+        imgUrl: ''
+    },
+    {
+        name: 'Bahamian Dollar',
+        code: 'BSD',
+        imgUrl: ''
+    },
+    {
+        name: 'Jamaican Dollar',
+        code: 'JMD',
+        imgUrl: ''
+    },
+    {
+        name: 'Mexican Peso',
+        code: 'MXN',
+        imgUrl: ''
+    },
+    {
+        name: 'US Dollar',
+        code: 'USD',
+        imgUrl: 'USD.png'
+    },
+    {
+        name: 'East Caribbean Dollar',
+        code: 'ECD',
+        imgUrl: ''
+    },
+    {
+        name: 'Belizean Dollar',
+        code: 'BZD',
+        imgUrl: ''
+    },
+    {
+        name: 'Trinidadian Dollar',
+        code: 'TTD',
+        imgUrl: ''
+    },
+    {
+        name: 'Bulgarian Lev',
+        code: 'BGN',
+        imgUrl: ''
+    },
+    {
+        name: 'Swiss Franc',
+        code: 'CHF',
+        imgUrl: ''
+    },
+    {
+        name: 'Czech Koruna',
+        code: 'CZK',
+        imgUrl: ''
+    },
+    {
+        name: 'Danish Krone',
+        code: 'DKK',
+        imgUrl: ''
+    },
+    {
+        name: 'Euro',
+        code: 'EUR',
+        imgUrl: 'EUR.png'
+    },
+    {
+        name: 'British Pound',
+        code: 'GBP',
+        imgUrl: ''
+    },
+    {
+        name: 'Croatian Kuna',
+        code: 'HRK',
+        imgUrl: ''
+    },
+    {
+        name: 'Hungarian Forint',
+        code: 'HUF',
+        imgUrl: ''
+    },
+    {
+        name: 'Israeli Shekel',
+        code: 'ILS',
+        imgUrl: ''
+    },
+    {
+        name: ' Norwegian Krone',
+        code: 'NOK',
+        imgUrl: ''
+    },
+    {
+        name: 'Polish Zloty',
+        code: 'PLN',
+        imgUrl: ''
+    },
+    {
+        name: 'Romanian Leu',
+        code: 'RON',
+        imgUrl: ''
+    },
+    {
+        name: 'Serbian Dinar',
+        code: 'RSD',
+        imgUrl: ''
+    },
+    {
+        name: 'Swedish Krona',
+        code: 'SEK',
+        imgUrl: ''
+    },
+    {
+        name: 'Turkish Lira',
+        code: 'TRY',
+        imgUrl: ''
+    },
+    {
+        name: 'Botswana Pula',
+        code: 'BWP',
+        imgUrl: ''
+    },
+    {
+        name: 'Ghanaian Cedi',
+        code: 'GHS',
+        imgUrl: ''
+    },
+    {
+        name: 'Kenyan Shilling',
+        code: 'KES',
+        imgUrl: ''
+    }
+];
+//# sourceMappingURL=allCurrencies.js.map
+
+/***/ }),
+
+/***/ 274:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_createaccount_createaccount__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_login_login__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_loginwithfacebook_loginwithfacebook__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_loginwithgmail_loginwithgmail__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_changetheme_changetheme__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_ratealert_ratealert__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_feedback_feedback__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_settings_settings__ = __webpack_require__(286);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_createaccount_createaccount__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_login_login__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_loginwithfacebook_loginwithfacebook__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_loginwithgmail_loginwithgmail__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_changetheme_changetheme__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_ratealert_ratealert__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_feedback_feedback__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_settings_settings__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_currencylist_currencylist__ = __webpack_require__(102);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -517,6 +893,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -547,6 +924,7 @@ var MyApp = (function () {
             { title: "Change Theme", component: __WEBPACK_IMPORTED_MODULE_9__pages_changetheme_changetheme__["a" /* ChangethemePage */] },
             { title: "Rate Alert", component: __WEBPACK_IMPORTED_MODULE_10__pages_ratealert_ratealert__["a" /* RatealertPage */] },
             { title: "Give us feedback!", component: __WEBPACK_IMPORTED_MODULE_11__pages_feedback_feedback__["a" /* FeedbackPage */] },
+            { title: "Currency List", component: __WEBPACK_IMPORTED_MODULE_13__pages_currencylist_currencylist__["a" /* CurrencylistPage */] },
             { title: "Settings", component: __WEBPACK_IMPORTED_MODULE_12__pages_settings_settings__["a" /* SettingsPage */] }
         ];
     }
@@ -566,63 +944,17 @@ var MyApp = (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */]),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */]) === "function" && _a || Object)
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/andyle/Desktop/temp/currency-app/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/andyle/Desktop/temp/currency-app/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/andyle/currency-app/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/andyle/currency-app/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=app.component.js.map
-
-/***/ }),
-
-/***/ 286:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SettingsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the SettingsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var SettingsPage = (function () {
-    function SettingsPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    SettingsPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad SettingsPage');
-    };
-    SettingsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-settings',template:/*ion-inline-start:"/Users/andyle/Desktop/temp/currency-app/src/pages/settings/settings.html"*/'<ion-header >\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title text-center>Settings</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/andyle/Desktop/temp/currency-app/src/pages/settings/settings.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-    ], SettingsPage);
-    return SettingsPage;
-}());
-
-//# sourceMappingURL=settings.js.map
 
 /***/ }),
 
@@ -630,9 +962,9 @@ var SettingsPage = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChangethemePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AllCurrenciesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -645,31 +977,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the ChangethemePage page.
+ * Generated class for the AllCurrenciesPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var ChangethemePage = (function () {
-    function ChangethemePage(navCtrl, navParams) {
+var AllCurrenciesPage = (function () {
+    function AllCurrenciesPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.myList = navParams.get('list').myCurrencyList;
+        console.log(this.myList);
     }
-    ChangethemePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ChangethemePage');
+    AllCurrenciesPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AllCurrenciesPage');
     };
-    ChangethemePage = __decorate([
+    AllCurrenciesPage.prototype.addCurrency = function (index) {
+        console.log(this.myList[index]);
+        this.myList[index].isfavor = true;
+    };
+    AllCurrenciesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-changetheme',template:/*ion-inline-start:"/Users/andyle/Desktop/temp/currency-app/src/pages/changetheme/changetheme.html"*/'<ion-header >\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title text-center>Change Theme</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/andyle/Desktop/temp/currency-app/src/pages/changetheme/changetheme.html"*/,
+            selector: 'page-all-currencies',template:/*ion-inline-start:"/Users/andyle/currency-app/src/pages/all-currencies/all-currencies.html"*/'<!--\n  Generated template for the AllCurrenciesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title text-center>Currency List</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list *ngFor = "let obj of myList;let i = index;">\n    <button ion-item (click)="addCurrency(i)">\n      <ion-avatar item-start>\n        <img src="../assets/imgs/{{obj.currency.imgUrl}}">\n      </ion-avatar>\n      <h2>{{obj.currency.code}} - {{obj.currency.name}}</h2>\n    </button>\n  </ion-list>\n</ion-content>\n\n'/*ion-inline-end:"/Users/andyle/currency-app/src/pages/all-currencies/all-currencies.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-    ], ChangethemePage);
-    return ChangethemePage;
+    ], AllCurrenciesPage);
+    return AllCurrenciesPage;
 }());
 
-//# sourceMappingURL=changetheme.js.map
+//# sourceMappingURL=all-currencies.js.map
 
 /***/ })
 
-},[202]);
+},[205]);
 //# sourceMappingURL=main.js.map
