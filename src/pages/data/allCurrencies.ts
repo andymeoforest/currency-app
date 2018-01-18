@@ -5,173 +5,203 @@ export const ALLCURRENCIES:Currency[]=[
   {
     name:'Canadian Dollar',
     code:'CAD',
+    imgUrl :'CAD.png'
   },
 
   {
     name:'Japanese Yen',
-    code:'JPY'
+    code:'JPY',
+    imgUrl :''
   },
 
   {
     name:'Australian Dollar',
     
-    code:'AUD'
+    code:'AUD',
+    imgUrl :''
+    
   },
 
   {
     name:'Barbadian or Bajan Dollar',
     
-    code:'BBD'
+    code:'BBD',
+    imgUrl :''
   },
 
   {
     name:'Bahamian Dollar',
     
-    code:'BSD'
+    code:'BSD',
+    imgUrl :''
   },
 
   {
     name:'Jamaican Dollar',
     
-    code:'JMD'
+    code:'JMD',
+    imgUrl :''
   },
 
   {
     name:'Mexican Peso',
     
-    code:'MXN'
+    code:'MXN',
+    imgUrl :''
   },
 
   {
     name:'US Dollar',
     
-    code:'USD'
+    code:'USD',
+    imgUrl :'USD.png'
   },
 
   {
     name:'East Caribbean Dollar',
     
-    code:''
+    code:'ECD',
+    imgUrl :''
   },
 
   {
     name:'Belizean Dollar',
     
-    code:'BZD'
+    code:'BZD',
+    imgUrl :''
   },
 
   {
     name:'Trinidadian Dollar',
     
-    code:'TTD'
+    code:'TTD',
+    imgUrl :''
   },
 
   {
     name:'Bulgarian Lev',
     
-    code:'BGN'
+    code:'BGN',
+    imgUrl :''
   },
 
   {
     name:'Swiss Franc',
     
-    code:'CHF'
+    code:'CHF',
+    imgUrl :''
   },
 
   {
     name:'Czech Koruna',
     
-    code:'CZK'
+    code:'CZK',
+    imgUrl :''
   },
 
   {
     name:'Danish Krone',
     
-    code:'DKK'
+    code:'DKK',
+    imgUrl :''
   },
 
   {
     name:'Euro',
     
-    code:'EUR'
+    code:'EUR',
+    imgUrl :'EUR.png'
   },
 
   {
     name:'British Pound',
     
-    code:'GBP'
+    code:'GBP',
+    imgUrl :''
   },
 
   {
     name:'Croatian Kuna',
     
-    code:'HRK'
+    code:'HRK',
+    imgUrl :''
   },
 
   {
     name:'Hungarian Forint',
     
-    code:'HUF'
+    code:'HUF',
+    imgUrl :''
   },
 
   {
     name:'Israeli Shekel',
     
-    code:'ILS'
+    code:'ILS',
+    imgUrl :''
   },
 
   {
     name:' Norwegian Krone',
     
-    code:'NOK'
+    code:'NOK',
+    imgUrl :''
   },
 
   {
     name:'Polish Zloty',
     
-    code:'PLN'
+    code:'PLN',
+    imgUrl :''
   },
 
   {
     name:'Romanian Leu',
     
-    code:'RON'
+    code:'RON',
+    imgUrl :''
   },
 
   {
     name:'Serbian Dinar',
     
-    code:'RSD'
+    code:'RSD',
+    imgUrl :''
   },
 
   {
     name:'Swedish Krona',
     
-    code:'SEK'
+    code:'SEK',
+    imgUrl :''
   },
 
   {
     name:'Turkish Lira',
     
-    code:'TRY'
+    code:'TRY',
+    imgUrl :''
   },
 
   {
     name:'Botswana Pula',
     
-    code:'BWP'
+    code:'BWP',
+    imgUrl :''
   },
 
   {
     name:'Ghanaian Cedi',
     
-    code:'GHS'
+    code:'GHS',
+    imgUrl :''
   },
 
   {
     name:'Kenyan Shilling',
     
-    code:'KES'
+    code:'KES',
+    imgUrl :''
   }
 ]
 

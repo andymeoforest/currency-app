@@ -23,13 +23,13 @@
 
 
 <ion-content padding>
-  <ion-list  *ngFor = "let obj of myList; let i = index;">
-    <ion-item-sliding  >
-      <ion-item>
+  <ion-list  *ngFor = "let obj of myCurrencies.myCurrencyList; let i = index;">
+    <ion-item-sliding *ngIf = "obj.isfavor" >
+      <ion-item >
         <ion-avatar item-start>
-          <img src="">
+          <img src="../assets/imgs/{{obj.currency.imgUrl}}">
         </ion-avatar>
-        <h2>{{obj.code}} - {{obj.name}}</h2>
+        <h2>{{obj.currency.code}} - {{obj.currency.name}}</h2>
       </ion-item>
         <ion-item-options slide="left">
           <button ion-button color="danger" (click)="deleteCurrency(i)">Delete</button>

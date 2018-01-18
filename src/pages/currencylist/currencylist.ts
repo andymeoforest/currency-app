@@ -4,6 +4,7 @@ import { ALLCURRENCIES } from '../data/allCurrencies';
 import { Currency } from '../data/currency'; 
 import { Pipe, PipeTransform} from '@angular/core';
 import {AllCurrenciesPage} from '../all-currencies/all-currencies';
+import { MyCurrencies } from '../data/myCurrencies';
 /**
  * Generated class for the CurrencylistPage page.
  *
@@ -18,16 +19,16 @@ import {AllCurrenciesPage} from '../all-currencies/all-currencies';
   templateUrl: 'currencylist.html',
 })
 export class CurrencylistPage {
-
+  myCurrencies  = new MyCurrencies();
   myList;
-  allCurrencies:Currency [] = ALLCURRENCIES;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.myList=[
-      this.allCurrencies[0],
-      this.allCurrencies[1],
-        this.allCurrencies[2]
-    ];
 
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.myCurrencies.sortCurrencyByCode();
+    this.myCurrencies.myCurrencyList;
+    this.myCurrencies.setFavorCurrency("CAD");
+    this.myCurrencies.setFavorCurrency("USD");
+    this.myCurrencies.setFavorCurrency("EUR");
+    console.log(this.myCurrencies);
   }
 
   ionViewDidLoad() {
@@ -36,12 +37,12 @@ export class CurrencylistPage {
 
   addCurrency(){
     console.log("push");
-    this.navCtrl.push(AllCurrenciesPage);
+    this.navCtrl.push(AllCurrenciesPage,{list:this.myCurrencies});
   }
   
   deleteCurrency(index){
     console.log(index);
-    this.myList.splice(index,1);
+    this.myCurrencies.myCurrencyList[index].isfavor = false;
   }
   
 
