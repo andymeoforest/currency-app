@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ALLCURRENCIES } from '../data/allCurrencies';
 import { Currency } from '../data/currency'; 
 import { Pipe, PipeTransform} from '@angular/core';
 import {AllCurrenciesPage} from '../all-currencies/all-currencies';
-import { MyCurrencies } from '../data/myCurrencies';
+import { MyCurrency } from '../data/mycurrency';
+import { CurrencyService } from '../data/currency.service';
+
 /**
  * Generated class for the CurrencylistPage page.
  *
@@ -18,31 +19,29 @@ import { MyCurrencies } from '../data/myCurrencies';
   selector: 'page-currencylist',
   templateUrl: 'currencylist.html',
 })
-export class CurrencylistPage {
-  myCurrencies  = new MyCurrencies();
-  myList;
+export class CurrencylistPage implements OnInit{
+  currencyList:MyCurrency[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.myCurrencies.sortCurrencyByCode();
-    this.myCurrencies.myCurrencyList;
-    this.myCurrencies.setFavorCurrency("CAD");
-    this.myCurrencies.setFavorCurrency("USD");
-    this.myCurrencies.setFavorCurrency("EUR");
-    console.log(this.myCurrencies);
+  constructor(public navCtrl: NavController, public navParams: NavParams, private currencyService:CurrencyService) {
+    
   }
-
+  ngOnInit(){
+    this.getCurrencyList();
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad CurrencylistPage');
   }
-
+  getCurrencyList():void{
+    this.currencyService.getCurrencyList().subscribe(currencyList => this.currencyList = currencyList); 
+  }
   addCurrency(){
     console.log("push");
-    this.navCtrl.push(AllCurrenciesPage,{list:this.myCurrencies});
+    this.navCtrl.push(AllCurrenciesPage,{list:this.currencyList});
   }
   
   deleteCurrency(index){
     console.log(index);
-    this.myCurrencies.myCurrencyList[index].isfavor = false;
+    this.currencyList[index].isfavor = false;
   }
   
 

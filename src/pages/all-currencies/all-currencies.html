@@ -15,7 +15,7 @@
 
 
 <ion-content padding>
-  <ion-list *ngFor = "let obj of myList;let i = index;">
+  <ion-list *ngFor = "let obj of currencyList;let i = index;">
     <button ion-item (click)="addCurrency(i)">
       <ion-avatar item-start>
         <img src="../assets/imgs/{{obj.currency.imgUrl}}">
