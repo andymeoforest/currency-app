@@ -8,11 +8,12 @@ import { of } from "rxjs/Observable/of";
 @Injectable()
 export class CurrencyService implements OnInit{
 
-    currencyList:MyCurrency[];
+    currencyList: MyCurrency[];
   
     constructor(){
         this.addAllCurrency();
-        this.sortCurrencyByCode();
+		this.sortCurrencyByCode();
+		this.currencyList = [];
     }
 
     
@@ -24,7 +25,11 @@ export class CurrencyService implements OnInit{
     addAllCurrency(){
         this.currencyList = [];
         ALLCURRENCIES.forEach(element => {
-            this.currencyList.push({key:element.code,currency:element,isfavor:false});
+            this.currencyList.push(new MyCurrency(
+				key: element.code,
+				currency: element,
+				isfavor: false
+			));
         });
     }
     

@@ -1,14 +1,14 @@
 webpackJsonp([1],{
 
-/***/ 291:
+/***/ 288:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RatealertPageModule", function() { return RatealertPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AllCurrenciesPageModule", function() { return AllCurrenciesPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ratealert__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__all_currencies__ = __webpack_require__(300);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var RatealertPageModule = (function () {
-    function RatealertPageModule() {
+var AllCurrenciesPageModule = (function () {
+    function AllCurrenciesPageModule() {
     }
-    RatealertPageModule = __decorate([
+    AllCurrenciesPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__ratealert__["a" /* RatealertPage */],
+                __WEBPACK_IMPORTED_MODULE_2__all_currencies__["a" /* AllCurrenciesPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__ratealert__["a" /* RatealertPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__all_currencies__["a" /* AllCurrenciesPage */]),
             ],
         })
-    ], RatealertPageModule);
-    return RatealertPageModule;
+    ], AllCurrenciesPageModule);
+    return AllCurrenciesPageModule;
 }());
 
-//# sourceMappingURL=ratealert.module.js.map
+//# sourceMappingURL=all-currencies.module.js.map
 
 /***/ })
 

@@ -4,13 +4,6 @@ import { CurrencylistPage } from '../currencylist/currencylist';
 import { MyCurrency } from '../data/mycurrency';
 import { CurrencyService } from '../data/currency.service';
 
-/**
- * Generated class for the AllCurrenciesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-all-currencies',
