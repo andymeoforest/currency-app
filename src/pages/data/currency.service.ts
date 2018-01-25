@@ -11,9 +11,10 @@ export class CurrencyService implements OnInit{
     currencyList: MyCurrency[];
   
     constructor(){
+        this.currencyList = [];
         this.addAllCurrency();
 		this.sortCurrencyByCode();
-		this.currencyList = [];
+
     }
 
     
@@ -25,11 +26,11 @@ export class CurrencyService implements OnInit{
     addAllCurrency(){
         this.currencyList = [];
         ALLCURRENCIES.forEach(element => {
-            this.currencyList.push(new MyCurrency(
+            this.currencyList.push({
 				key: element.code,
 				currency: element,
 				isfavor: false
-			));
+        });
         });
     }
     

@@ -14,10 +14,10 @@ export class AllCurrenciesPage {
   currencyList:MyCurrency[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private currencyService:CurrencyService) {
-    
+    this.getCurrencyList();
   }
   ngOnInit(){
-    this.getCurrencyList();
+    
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad CurrencylistPage');
