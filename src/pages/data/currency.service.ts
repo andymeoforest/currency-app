@@ -29,7 +29,8 @@ export class CurrencyService implements OnInit{
             this.currencyList.push({
 				key: element.code,
 				currency: element,
-				isfavor: false
+                isfavor: false,
+                rate:1
         });
         });
     }
@@ -41,6 +42,19 @@ export class CurrencyService implements OnInit{
     removeFacoverCurrency(key:string){
         var index = this.currencyList.findIndex(function(obj){return obj.key==key});
         this.currencyList[index].isfavor = false;
+    }
+    setCurrencyRate(key:string,rate:number){
+        try{
+            var index = this.currencyList.findIndex(function(obj){return obj.key==key});
+            this.currencyList[index].rate = rate;
+        }catch(error){
+
+        }
+        
+    }
+    getCurrency(key:string):MyCurrency{
+        var index = this.currencyList.findIndex(function(obj){return obj.key==key});
+        return this.currencyList[index];
     }
     sortCurrencyByCode(){
         this.currencyList = this.currencyList.sort(function(a,b){

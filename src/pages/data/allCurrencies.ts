@@ -7,7 +7,11 @@ export const ALLCURRENCIES:Currency[]=[
     code:'CAD',
     imgUrl :'CAD.png'
   },
-
+  {
+    name:'Brazilian Real',
+    code:'BRL',
+    imgUrl :''
+  },
   {
     name:'Japanese Yen',
     code:'JPY',

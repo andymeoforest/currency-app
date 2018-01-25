@@ -6,6 +6,7 @@ export class Currency {
 	code: string;
 	// imgUrl: string;
 	value: number;
+	imgUrl: string;
 
 	constructor(code: string, value: number) {
 		// this.name = name;
