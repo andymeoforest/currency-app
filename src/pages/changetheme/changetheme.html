@@ -1,5 +1,5 @@
-<ion-header >
-  <ion-navbar color="primary">
+<ion-header>
+  <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -8,6 +8,30 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content card-background-page>
+
+    <ion-card id="ion-card-ocean" (click)="setOceanTheme()">
+        <img src="../../assets/imgs/themes/ocean.jpg"/>
+        <div id="card-title-ocean">Deep Ocean (default)</div>
+        <div *ngIf="showTheme==0" id="card-subtitle-ocean"> <ion-icon name="checkmark"></ion-icon></div>
+      </ion-card>
+    
+      <ion-card id="ion-card-sunny" (click)="setSunnyTheme()">
+        <img src="../../assets/imgs/themes/sunny.jpg"/>
+        <div id="card-title-sunny">Sunny Days</div>
+        <div *ngIf="showTheme==1" id="card-subtitle-sunny"> <ion-icon name="checkmark"></ion-icon></div>
+      </ion-card>
+    
+      <ion-card id="ion-card-midnight" (click)="setMidnightTheme()">
+        <img src="../../assets/imgs/themes/midnight.jpg"/>
+        <div id="card-title-midnight">Midnight at Last</div>
+        <div *ngIf="showTheme==2" id="card-subtitle-midnight"> <ion-icon name="checkmark"></ion-icon></div>
+      </ion-card>
+    
+      <ion-card id="ion-card-pastel" (click)="setPastelTheme()">
+        <img src="../../assets/imgs/themes/pastel.jpg"/>
+        <div id="card-title-pastel">Pastel Sunset</div>
+        <div *ngIf="showTheme==3" id="card-subtitle-pastel"> <ion-icon name="checkmark"></ion-icon></div>
+      </ion-card>
 
 </ion-content>

@@ -1,3 +1,130 @@
+.sunny-day-theme .toolbar-background {
+  background-color: #e4ff1a !important;
+}
+
+.sunny-day-theme .toolbar-title {
+  color: #142b18 !important;
+}
+
+.sunny-day-theme ion-content {
+  background-color: #1be7ff !important;
+  color: light-sunny-day !important;
+}
+
+.sunny-day-theme .side-menu {
+  background-color: #1be7ff;
+}
+
+.midnight-at-last-theme .toolbar-background {
+  background-color: #273469 !important;
+}
+
+.midnight-at-last-theme .toolbar-title {
+  color: #fafaff !important;
+}
+
+.midnight-at-last-theme ion-content {
+  background-color: #e4d9ff !important;
+  color: #1e2749 !important;
+}
+
+.deep-ocean-theme .toolbar-background {
+  background-color: #247ba0 !important;
+}
+
+.deep-ocean-theme .toolbar-title {
+  color: #e8f1f2 !important;
+}
+
+.deep-ocean-theme ion-content {
+  background-color: #e8f1f2 !important;
+}
+
+.pastel-sunset-theme .toolbar-background {
+  background-color: #9bc1bc !important;
+}
+
+.pastel-sunset-theme .toolbar-text-color {
+  color: #111e1f !important;
+}
+
+.pastel-sunset-theme .toolbar-active-color {
+  background-color: #f2f4ef !important;
+}
+
+.pastel-sunset-theme ion-content {
+  background-color: #f4f1bb !important;
+}
+
+.pastel-sunset-theme .side-menu {
+  background-color: #f4f1bb;
+}
+
+#ion-card-ocean,
+#ion-card-midnight,
+#ion-card-pastel,
+#ion-card-sunny {
+  position: relative;
+  text-align: center;
+}
+
+#card-title-ocean,
+#card-title-midnight,
+#card-title-pastel,
+#card-title-sunny {
+  position: absolute;
+  top: 36%;
+  font-size: 2.0em;
+  width: 100%;
+  font-weight: bold;
+}
+
+#card-title-ocean {
+  color: #e7f0f5;
+}
+
+#card-title-midnight {
+  color: #fafaff;
+}
+
+#card-title-pastel {
+  color: #111e1f;
+}
+
+#card-title-sunny {
+  color: #142b18;
+}
+
+#card-subtitle-ocean,
+#card-subtitle-midnight,
+#card-subtitle-pastel,
+#card-subtitle-sunny {
+  font-size: 5.0em;
+  position: absolute;
+  top: 52%;
+  width: 100%;
+}
+
+#card-subtitle-ocean {
+  size: 10em;
+  color: #e7f0f5;
+}
+
+#card-subtitle-sunny {
+  size: 20em;
+  color: #142b18;
+}
+
+#card-subtitle-midnight {
+  size: 20em;
+  color: #fafaff;
+}
+
+#card-subtitle-pastel {
+  size: 20em;
+  color: #111e1f;
+}
+
 .ion-ios-add:before {
   content: "\f102";
 }

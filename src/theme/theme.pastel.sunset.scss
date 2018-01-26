@@ -1,0 +1,44 @@
+.pastel-sunset-theme {
+/////////////
+//    Base colors
+/////////////
+
+$primary-pastel-sunset: #9bc1bc;
+$secondary-pastel-sunset: #f4f1bb;
+$danger-pastel-sunset: #c2574a;
+$light-pastel-sunset: #f2f4ef;
+$dark-pastel-sunset: #111e1f;
+
+//End of base colors
+
+
+////////////////////
+//       Pre Built Ionic tags and classes
+//       These tags override user written tags
+///////////////////
+
+.toolbar-background {
+  background-color: $primary-pastel-sunset !important;
+}
+
+.toolbar-text-color{
+  color: $dark-pastel-sunset !important;
+} 
+.toolbar-active-color {
+  background-color:  $light-pastel-sunset !important;
+}
+
+ion-content {
+  background-color: $secondary-pastel-sunset !important;
+}//End of pre built tags
+
+
+/////////////
+//    Custom classes
+/////////////
+
+.side-menu {
+  background-color: $secondary-pastel-sunset
+}//
+
+}

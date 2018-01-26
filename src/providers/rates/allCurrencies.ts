@@ -2,207 +2,207 @@ import { Component } from '@angular/core';
 import { Currency } from './currency';
 
 export const ALLCURRENCIES:Currency[]=[
-  {
-    name:'Canadian Dollar',
-    code:'CAD',
-    imgUrl :'CAD.png'
-  },
+//   {
+//     name: 'Canadian Dollar',
+//     code:'CAD',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Japanese Yen',
-    code:'JPY',
-    imgUrl :''
-  },
+//   {
+//     name:'Japanese Yen',
+//     code:'JPY',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Australian Dollar',
+//   {
+//     name:'Australian Dollar',
     
-    code:'AUD',
-    imgUrl :''
+//     code:'AUD',
+//     imgUrl :''
     
-  },
+//   },
 
-  {
-    name:'Barbadian or Bajan Dollar',
+//   {
+//     name:'Barbadian or Bajan Dollar',
     
-    code:'BBD',
-    imgUrl :''
-  },
+//     code:'BBD',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Bahamian Dollar',
+//   {
+//     name:'Bahamian Dollar',
     
-    code:'BSD',
-    imgUrl :''
-  },
+//     code:'BSD',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Jamaican Dollar',
+//   {
+//     name:'Jamaican Dollar',
     
-    code:'JMD',
-    imgUrl :''
-  },
+//     code:'JMD',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Mexican Peso',
+//   {
+//     name:'Mexican Peso',
     
-    code:'MXN',
-    imgUrl :''
-  },
+//     code:'MXN',
+//     imgUrl :''
+//   },
 
-  {
-    name:'US Dollar',
+//   {
+//     name:'US Dollar',
     
-    code:'USD',
-    imgUrl :'USD.png'
-  },
+//     code:'USD',
+//     imgUrl :'USD.png'
+//   },
 
-  {
-    name:'East Caribbean Dollar',
+//   {
+//     name:'East Caribbean Dollar',
     
-    code:'ECD',
-    imgUrl :''
-  },
+//     code:'ECD',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Belizean Dollar',
+//   {
+//     name:'Belizean Dollar',
     
-    code:'BZD',
-    imgUrl :''
-  },
+//     code:'BZD',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Trinidadian Dollar',
+//   {
+//     name:'Trinidadian Dollar',
     
-    code:'TTD',
-    imgUrl :''
-  },
+//     code:'TTD',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Bulgarian Lev',
+//   {
+//     name:'Bulgarian Lev',
     
-    code:'BGN',
-    imgUrl :''
-  },
+//     code:'BGN',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Swiss Franc',
+//   {
+//     name:'Swiss Franc',
     
-    code:'CHF',
-    imgUrl :''
-  },
+//     code:'CHF',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Czech Koruna',
+//   {
+//     name:'Czech Koruna',
     
-    code:'CZK',
-    imgUrl :''
-  },
+//     code:'CZK',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Danish Krone',
+//   {
+//     name:'Danish Krone',
     
-    code:'DKK',
-    imgUrl :''
-  },
+//     code:'DKK',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Euro',
+//   {
+//     name:'Euro',
     
-    code:'EUR',
-    imgUrl :'EUR.png'
-  },
+//     code:'EUR',
+//     imgUrl :'EUR.png'
+//   },
 
-  {
-    name:'British Pound',
+//   {
+//     name:'British Pound',
     
-    code:'GBP',
-    imgUrl :''
-  },
+//     code:'GBP',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Croatian Kuna',
+//   {
+//     name:'Croatian Kuna',
     
-    code:'HRK',
-    imgUrl :''
-  },
+//     code:'HRK',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Hungarian Forint',
+//   {
+//     name:'Hungarian Forint',
     
-    code:'HUF',
-    imgUrl :''
-  },
+//     code:'HUF',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Israeli Shekel',
+//   {
+//     name:'Israeli Shekel',
     
-    code:'ILS',
-    imgUrl :''
-  },
+//     code:'ILS',
+//     imgUrl :''
+//   },
 
-  {
-    name:' Norwegian Krone',
+//   {
+//     name:' Norwegian Krone',
     
-    code:'NOK',
-    imgUrl :''
-  },
+//     code:'NOK',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Polish Zloty',
+//   {
+//     name:'Polish Zloty',
     
-    code:'PLN',
-    imgUrl :''
-  },
+//     code:'PLN',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Romanian Leu',
+//   {
+//     name:'Romanian Leu',
     
-    code:'RON',
-    imgUrl :''
-  },
+//     code:'RON',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Serbian Dinar',
+//   {
+//     name:'Serbian Dinar',
     
-    code:'RSD',
-    imgUrl :''
-  },
+//     code:'RSD',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Swedish Krona',
+//   {
+//     name:'Swedish Krona',
     
-    code:'SEK',
-    imgUrl :''
-  },
+//     code:'SEK',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Turkish Lira',
+//   {
+//     name:'Turkish Lira',
     
-    code:'TRY',
-    imgUrl :''
-  },
+//     code:'TRY',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Botswana Pula',
+//   {
+//     name:'Botswana Pula',
     
-    code:'BWP',
-    imgUrl :''
-  },
+//     code:'BWP',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Ghanaian Cedi',
+//   {
+//     name:'Ghanaian Cedi',
     
-    code:'GHS',
-    imgUrl :''
-  },
+//     code:'GHS',
+//     imgUrl :''
+//   },
 
-  {
-    name:'Kenyan Shilling',
+//   {
+//     name:'Kenyan Shilling',
     
-    code:'KES',
-    imgUrl :''
-  }
-]
+//     code:'KES',
+//     imgUrl :''
+//   }
+ ]
 
 

@@ -1,3 +1,8 @@
+@import "theme.sunny.day";
+@import "theme.midnight.at.last";
+@import "theme.deep.ocean";
+@import "theme.pastel.sunset";
+
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
@@ -22,6 +27,34 @@ $app-direction: ltr;
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
+//midnight at last
+$primary-midnight-at-last: #273469;
+$secondary-midnight-at-last: #e4d9ff;
+$danger-midnight-at-last: #30343f;
+$light-midnight-at-last: #fafaff;
+$dark-midnight-at-last: #1e2749;
+
+//sunny days
+$primary-sunny-day: #e4ff1a;
+$secondary-sunny-day: #1be7ff;
+$danger-sunny-day: #ff5714;
+$light-sunny-day: #fcf7e9;
+$dark-sunny-day: #142b18;
+
+//pastel sunset
+
+$primary-pastel-sunset: #9bc1bc;
+$secondary-pastel-sunset: #f4f1bb;
+$danger-pastel-sunset: #c2574a;
+$light-pastel-sunset: #f2f4ef;
+$dark-pastel-sunset: #111e1f;
+
+//deep ocean
+$primary-deep-ocean: #247ba0;
+$secondary-deep-ocean: #e8f1f2;
+$danger-deep-ocean: #13293d;
+$light-deep-ocean: #e7f0f5;
+$dark-deep-ocean: #051c29;
 
 
 
@@ -72,6 +105,76 @@ $colors: (
 
 @import "ionic.theme.default";
 
+/////////////
+//    STYLE FOR THE THEME SELECTOR PAGE
+/////////////
+
+
+#ion-card-ocean,
+#ion-card-midnight,
+#ion-card-pastel,
+#ion-card-sunny, {
+
+    position: relative;
+    text-align: center;
+  }
+ 
+#card-title-ocean,
+#card-title-midnight,
+#card-title-pastel,
+#card-title-sunny, {
+  position: absolute;
+  top: 36%;
+  font-size: 2.0em;
+  width: 100%;
+  font-weight: bold;
+}
+
+#card-title-ocean {
+  color: $light-deep-ocean;
+}
+#card-title-midnight {
+  color: $light-midnight-at-last;
+}
+#card-title-pastel {
+  color: $dark-pastel-sunset;
+}
+#card-title-sunny {
+  color: $dark-sunny-day;
+}
+
+#card-subtitle-ocean,
+#card-subtitle-midnight,
+#card-subtitle-pastel,
+#card-subtitle-sunny, {
+  font-size: 5.0em;
+  position: absolute;
+  top: 52%;
+  width: 100%;
+}
+
+//Changes the checkmark which indiates that the theme has been selected
+#card-subtitle-ocean {
+  size: 10em;
+  color: $light-deep-ocean;
+}
+//Changes the checkmark which indiates that the theme has been selected
+#card-subtitle-sunny {
+  size: 20em;
+  color: $dark-sunny-day;
+}
+//Changes the checkmark which indiates that the theme has been selected
+#card-subtitle-midnight {
+  size: 20em;
+  color: $light-midnight-at-last;
+}
+//Changes the checkmark which indiates that the theme has been selected
+#card-subtitle-pastel {
+  size: 20em;
+  color: $dark-pastel-sunset;
+}
+
+//
 
 // Ionicons
 // --------------------------------------------------

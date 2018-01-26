@@ -21,6 +21,7 @@ import { CurrenciesPage } from '../pages/currencies/currencies';
 
 import { RatesProvider } from '../providers/rates/rates';
 import { CurrencyService } from '../pages/data/currency.service';
+import { SettingsProvider } from '../providers/settings/settings';
 
 @NgModule({
 	declarations: [
@@ -63,9 +64,11 @@ import { CurrencyService } from '../pages/data/currency.service';
 	providers: [
 		StatusBar,
 		SplashScreen,
+		SettingsProvider,
 		{ provide: ErrorHandler, useClass: IonicErrorHandler },
 		RatesProvider,
 		CurrencyService
-	]
+	],
+
 })
 export class AppModule { }

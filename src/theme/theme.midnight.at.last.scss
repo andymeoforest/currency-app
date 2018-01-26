@@ -1,0 +1,34 @@
+.midnight-at-last-theme {
+  /////////////
+//    Base colors
+/////////////
+$primary-midnight-at-last: #273469;
+$secondary-midnight-at-last: #e4d9ff;
+$danger-midnight-at-last: #30343f;
+$light-midnight-at-last: #fafaff;
+$dark-midnight-at-last: #1e2749;
+//End of base colours
+
+
+/////////////
+//    pre built ionic tags and classes
+/////////////
+
+.toolbar-background {
+
+  background-color: $primary-midnight-at-last !important;
+  
+}
+//color of the page name, "eg. Change Theme"
+.toolbar-title{
+  color: $light-midnight-at-last !important;
+}
+
+ion-content {
+  background-color: $secondary-midnight-at-last !important;
+  color: $dark-midnight-at-last !important;
+}
+//End of pre built ionic classes and tags
+
+     
+}

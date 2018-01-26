@@ -1,0 +1,43 @@
+.sunny-day-theme {
+/////////////
+//    Base colors
+/////////////
+
+$primary-sunny-day: #e4ff1a;
+$secondary-sunny-day: #1be7ff;
+$danger-sunny-day: #ff5714;
+$light-sunny-day: #fcf7e9;
+$dark-sunny-day: #142b18;
+
+//End of base colors
+
+/////////////
+//    pre built ionic classes and elements
+/////////////
+
+.toolbar-background{
+  background-color: $primary-sunny-day !important;
+}
+
+//color of the page name, "eg. Change Theme"
+.toolbar-title{
+  color: $dark-sunny-day !important;
+}
+
+ion-content {
+  background-color: $secondary-sunny-day !important;
+  color: light-sunny-day !important;
+}
+//End of pre built ionic classes and tags
+
+/////////////
+//    Custom classes
+/////////////
+
+.side-menu {
+  background-color: $secondary-sunny-day
+}
+
+
+//
+  }

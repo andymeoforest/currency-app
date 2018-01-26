@@ -1,0 +1,52 @@
+.deep-ocean-theme {
+  /////////////
+//    Base colors
+/////////////
+$primary-deep-ocean: #247ba0;
+$secondary-deep-ocean: #e8f1f2;
+$danger-deep-ocean: #13293d;
+$light-deep-ocean: #e7f0f5;
+$dark-deep-ocean: #051c29;
+
+//End of base colour
+
+  
+/////////////
+//    Pre built ionic tags and classess
+/////////////
+
+.toolbar-background {
+  background-color: $primary-deep-ocean !important;
+}
+//color of the page name, "eg. Change Theme"
+.toolbar-title{
+  color: $secondary-deep-ocean !important;
+}
+
+ion-content {
+  background-color: $secondary-deep-ocean !important;
+
+
+}
+
+
+
+//End of pre built ionic tags and classes
+
+ /////////////
+//    HTML elements
+/////////////
+
+
+
+//End of HTML elements
+
+/////////////
+//    Custom classes
+/////////////
+
+
+
+//End of custom classes
+
+  }

@@ -14,6 +14,7 @@ import { FeedbackPage } from '../pages/feedback/feedback';
 import { SettingsPage } from '../pages/settings/settings';
 import { CurrencylistPage } from '../pages/currencylist/currencylist';
 import { CurrenciesPage } from '../pages/currencies/currencies';
+import { SettingsProvider } from './../providers/settings/settings';
 
 @Component({
 	templateUrl: 'app.html'
@@ -21,13 +22,16 @@ import { CurrenciesPage } from '../pages/currencies/currencies';
 export class MyApp {
 	@ViewChild(Nav) nav: Nav;
 
-	rootPage: any = CurrenciesPage;
+	rootPage: any = HomePage;
+
+	selectedTheme: String;
 
 	pages: Array<{ title: string, component: any }>;
 
-	constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+	constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private settings: SettingsProvider) {
+		this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
+	
 		this.initializeApp();
-
 		// used for an example of ngFor and navigation
 		this.pages = [
 			{ title: 'Home', component: HomePage },
