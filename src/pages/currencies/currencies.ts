@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RatesProvider } from '../../providers/rates/rates';
-// import { AllCurrenciesPage } from '../all-currencies/all-currencies';
 import { Currency } from '../../providers/rates/currency';
 
 @IonicPage()
@@ -12,7 +11,7 @@ import { Currency } from '../../providers/rates/currency';
 export class CurrenciesPage {
 
 	selectedCurrency: string;
-	allCurrencies: any[];
+	allCurrencies: Currency[];
 	currenciesRates: Currency[];
 	amount: number;
 
@@ -23,24 +22,41 @@ export class CurrenciesPage {
 	}
 
 	ionViewDidLoad() {
-		this.ratesProvider.getRates(this.selectedCurrency).subscribe(res => {
-			let rates = Object.keys((res as any).rates);
-			this.allCurrencies = rates.slice();
-			this.allCurrencies.push(this.selectedCurrency);
-			rates.forEach(k => {
-				this.currenciesRates.push(new Currency(k, (res as any).rates[k]));
+		this.ratesProvider.getAllCurrencies().then(allCurrencies => {
+			this.allCurrencies = allCurrencies;
+			this.ratesProvider.getRates().then(rates => {
+				allCurrencies.forEach(obj => {
+					if (obj.code === this.selectedCurrency) {
+						return;
+					}
+					obj.value = rates[obj.code];
+					this.currenciesRates.push(obj);
+				});
+				this.currenciesRates[3].isFavor = true;
+				this.currenciesRates[5].isFavor = true;
 			});
-		});		
+			this.showFavorite();
+		});
 	}
 
 	changeSelectedCurrency(e) {
 		this.selectedCurrency = e;
-		this.ratesProvider.getRates(this.selectedCurrency).subscribe(res => {
-			this.currenciesRates = [];
-			Object.keys((res as any).rates).forEach(k => {
-				this.currenciesRates.push(new Currency(k, (res as any).rates[k]));
-			});
+		let baseObject = this.currenciesRates.find(obj => {
+			return obj.code === e;
 		});
+		let baseValue = baseObject.value;
+	}
+
+	showAll() {
+		this.currenciesRates = [];
+		this.currenciesRates = this.allCurrencies;	
+	}
+
+	showFavorite() {
+		let currenciesRates = this.currenciesRates.filter(obj => {
+			return obj.isFavor === true;
+		});
+		console.log(currenciesRates);
 	}
 
 	calculate() {

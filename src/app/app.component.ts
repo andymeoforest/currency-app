@@ -16,19 +16,23 @@ import { CurrencylistPage } from '../pages/currencylist/currencylist';
 import { CurrenciesPage } from '../pages/currencies/currencies';
 import { SettingsProvider } from './../providers/settings/settings';
 
+import { RatesProvider } from '../providers/rates/rates';
+
 @Component({
 	templateUrl: 'app.html'
 })
 export class MyApp {
 	@ViewChild(Nav) nav: Nav;
 
-	rootPage: any = HomePage;
+	rootPage: any = CurrenciesPage;
 
 	selectedTheme: String;
+	baseCurrency: string = 'CAD';
+	// updateInterval: number = 1000 * 60 * 60 * 24; // 1 day
 
 	pages: Array<{ title: string, component: any }>;
 
-	constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private settings: SettingsProvider) {
+	constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private settings: SettingsProvider, protected ratesProvider: RatesProvider) {
 		this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
 	
 		this.initializeApp();
@@ -54,6 +58,8 @@ export class MyApp {
 			// Here you can do any higher level native things you might need.
 			this.statusBar.styleDefault();
 			this.splashScreen.hide();
+			this.createCurrencies(this.baseCurrency);
+			this.updateCurrenciesRates(this.baseCurrency);
 		});
 	}
 
@@ -61,5 +67,13 @@ export class MyApp {
 		// Reset the content nav to have just this page
 		// we wouldn't want the back button to show in this scenario
 		this.nav.setRoot(page.component);
+	}
+
+	createCurrencies(baseCurrency: string): void {
+		this.ratesProvider.createCurrencies(baseCurrency);		
+	}
+	updateCurrenciesRates(baseCurrency: string): void {
+		this.ratesProvider.updateCurrenciesRates(baseCurrency);
+		// setTimeout(() => { this.updateRates(baseCurrency) }, this.updateInterval);
 	}
 }

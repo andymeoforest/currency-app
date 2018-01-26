@@ -2,18 +2,35 @@ import { Component } from '@angular/core';
 
 export class Currency {
 
-	// name: string;
-	code: string;
-	// imgUrl: string;
-	value: number;
-	imgUrl: string;
+	public code: string;
+	public name: string;
+	public value: number;
+	public isFavor: boolean;
 
-	constructor(code: string, value: number) {
-		// this.name = name;
+	constructor(code: string, name: string, value: number) {
 		this.code = code;
-		// this.imgUrl = imgUrl;
+		this.name = name;
+		this.value = value;
+		this.isFavor = false;
+	}
+
+	public setValue(value: number): void {
 		this.value = value;
 	}
+
+	public getValue(): number {
+		return this.value;
+	}
+
+	public setIsFavor(value: boolean): void {
+		this.isFavor = value;
+	}
+
+	public getIsFavor(): boolean {
+		return this.isFavor;
+	}
+
+	public getFlagUrl() {
+		return '/src/assets/imgs/flags/' + this.code + '.png';
+	}
 }
-
-

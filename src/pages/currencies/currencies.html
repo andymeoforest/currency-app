@@ -14,12 +14,14 @@
 		<ion-list inset>
 			<ion-item>
 				<ion-select item-start [(ngModel)]="selectedCurrency" (ionChange)="changeSelectedCurrency($event)">
-					<ion-option *ngFor="let cur of allCurrencies" value="{{cur}}">{{cur}}</ion-option>
+					<ion-option *ngFor="let cur of allCurrencies" value="{{cur.code}}">{{cur.name}}</ion-option>
 				</ion-select>	
 				<ion-input item-end [(ngModel)]="amount" name="amount" type="number" value="{{amount}}"></ion-input>							
 			</ion-item>
 			<ion-item>
-				<button ion-button (click)="calculate()">Calculate</button>	
+				<button ion-button (click)="showAll()">Show All</button>
+				<button ion-button (click)="showFavorite()">Show Favorite</button>
+				<button ion-button (click)="calculate()">Calculate</button>
 			</ion-item>
 		</ion-list>
 	</ion-card>
@@ -28,7 +30,7 @@
 		<ion-card>
 			<ion-list>
 				<ion-item>
-					<ion-label color="primary">{{ rate.code }}</ion-label>
+					<ion-label color="primary">{{ rate.name }}</ion-label>
 					<div item-content>{{ rate.value | number:'1.2-2' }}</div>
 				</ion-item>
 			</ion-list>
