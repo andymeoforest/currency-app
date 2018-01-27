@@ -42,7 +42,7 @@ export class RatesProvider {
 	public updateCurrenciesRates(baseCurrency: string): void {
 		this.callRatesApi(baseCurrency).subscribe((res: any) => {
 			this.storage.get('createdCurrencies').then(array => {
-				array.forEach((obj: Currency) => {
+				array.forEach(obj => {
 					if (obj.code === baseCurrency) {
 						obj.value = 1;
 						return;
@@ -54,12 +54,11 @@ export class RatesProvider {
 		});
 	}
 
-
-	public getRates(base: string) {
+	public getRates(base: string): Observable<any> {
 		return this.http.get(this.apiRatesUrl + base);
 	}
 
-	public getStorageRates(): Promise<Currency[]> {
+	public getStorageRates(): Promise<any> {
 		return this.storage.get('updatedCurrencies');
 	}
 

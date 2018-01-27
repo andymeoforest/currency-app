@@ -295,6 +295,7 @@ var CreateaccountPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rates_rates__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rates_currency__ = __webpack_require__(674);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -307,42 +308,56 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CurrenciesPage = (function () {
     function CurrenciesPage(navCtrl, navParams, ratesProvider) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.ratesProvider = ratesProvider;
         this.selectedCurrency = "CAD";
+        this.allCurrencies = [];
         this.outputCurrencies = [];
         this.amount = 1;
     }
     CurrenciesPage.prototype.ionViewDidLoad = function () {
         var _this = this;
         this.ratesProvider.getStorageRates().then(function (allCurrencies) {
-            allCurrencies[3].isFavor = true;
-            allCurrencies[5].isFavor = true;
-            _this.allCurrencies = allCurrencies;
+            allCurrencies.forEach(function (obj) {
+                _this.allCurrencies.push(new __WEBPACK_IMPORTED_MODULE_3__providers_rates_currency__["a" /* Currency */](obj.code, obj.name, obj.value));
+            });
+            _this.allCurrencies[3].setIsFavor(true);
+            _this.allCurrencies[5].setIsFavor(true);
+            _this.allCurrencies[31].setIsFavor(true);
+            console.log(_this.allCurrencies);
             _this.showFavorite();
         });
     };
     CurrenciesPage.prototype.changeSelectedCurrency = function (e) {
+        var prevSelectedCurrency = this.selectedCurrency;
         this.selectedCurrency = e;
-        var baseObject = this.outputCurrencies.find(function (obj) {
+        var prevBaseObject = this.allCurrencies.find(function (obj) {
+            return obj.code === prevSelectedCurrency;
+        });
+        var baseObject = this.allCurrencies.find(function (obj) {
             return obj.code === e;
         });
         var baseValue = baseObject.value;
+        console.log(prevBaseObject.value);
+        console.log(baseObject.value);
+        var outputCurrencies = this.outputCurrencies;
+        this.outputCurrencies.forEach(function (obj) {
+            obj.setValue(obj.value / baseObject.value);
+        });
     };
     CurrenciesPage.prototype.showAll = function () {
-        var _this = this;
-        var outputCurrencies = this.allCurrencies.filter(function (obj) {
-            return obj.code !== _this.selectedCurrency;
-        });
-        this.outputCurrencies = outputCurrencies;
+        // let outputCurrencies = this.allCurrencies.filter(obj => {
+        // 	return obj.code !== this.selectedCurrency;
+        // });
+        this.outputCurrencies = this.allCurrencies;
     };
     CurrenciesPage.prototype.showFavorite = function () {
-        var _this = this;
         var outputCurrencies = this.allCurrencies.filter(function (obj) {
-            return obj.isFavor === true && obj.code !== _this.selectedCurrency;
+            return obj.isFavor === true; // && obj.code !== this.selectedCurrency;
         });
         this.outputCurrencies = outputCurrencies;
     };
@@ -354,7 +369,7 @@ var CurrenciesPage = (function () {
     };
     CurrenciesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-currencies',template:/*ion-inline-start:"/Users/lennakz/WebRoot/currency-app/src/pages/currencies/currencies.html"*/'<ion-header>\n	<ion-navbar>\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n		<ion-title text-center>Currencies</ion-title>\n	</ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n	<ion-card>\n		<ion-list inset>\n			<ion-item>\n				<ion-select item-start [(ngModel)]="selectedCurrency" (ionChange)="changeSelectedCurrency($event)">\n					<ion-option *ngFor="let cur of allCurrencies" value="{{cur.code}}">{{cur.name}}</ion-option>\n				</ion-select>	\n				<ion-input item-end [(ngModel)]="amount" name="amount" type="number" value="{{amount}}"></ion-input>							\n			</ion-item>\n			<ion-item>\n				<button ion-button (click)="showAll()">Show All</button>\n				<button ion-button (click)="showFavorite()">Show Favorite</button>\n				<button ion-button (click)="calculate()">Calculate</button>\n			</ion-item>\n		</ion-list>\n	</ion-card>\n\n	<div *ngFor="let cur of outputCurrencies" (click)="changeSelectedCurrency(cur.code)">\n		<ion-card>\n			<ion-list>\n				<ion-item>\n					<ion-label color="primary">{{ cur.name }}</ion-label>\n					<div item-content>{{ cur.value | number:\'1.2-2\' }}</div>\n				</ion-item>\n			</ion-list>\n		</ion-card>\n	</div>\n	\n\n</ion-content>'/*ion-inline-end:"/Users/lennakz/WebRoot/currency-app/src/pages/currencies/currencies.html"*/,
+            selector: 'page-currencies',template:/*ion-inline-start:"/Users/lennakz/WebRoot/currency-app/src/pages/currencies/currencies.html"*/'<ion-header>\n	<ion-navbar>\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n		<ion-title text-center>Currencies</ion-title>\n	</ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n	<ion-card>\n		<ion-list inset>\n			<ion-item>\n				<ion-select item-start (ionChange)="changeSelectedCurrency($event)">\n					<ion-option *ngFor="let cur of allCurrencies" value="{{cur.code}}" [selected]="cur.code == selectedCurrency">{{cur.name}}</ion-option>\n				</ion-select>	\n				<ion-input item-end [(ngModel)]="amount" name="amount" type="number" value="{{amount}}"></ion-input>							\n			</ion-item>\n			<ion-item>\n				<button ion-button (click)="showAll()">Show All</button>\n				<button ion-button (click)="showFavorite()">Show Favorite</button>\n				<button ion-button (click)="calculate()">Calculate</button>\n			</ion-item>\n		</ion-list>\n	</ion-card>\n\n	<div *ngFor="let cur of outputCurrencies" (click)="changeSelectedCurrency(cur.code)">\n		<ion-card>\n			<ion-list>\n				<ion-item>\n					<ion-label color="primary">{{ cur.name }}</ion-label>\n					<div item-content>{{ cur.value | number:\'1.2-2\' }}</div>\n				</ion-item>\n			</ion-list>\n		</ion-card>\n	</div>\n	\n\n</ion-content>'/*ion-inline-end:"/Users/lennakz/WebRoot/currency-app/src/pages/currencies/currencies.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_rates_rates__["a" /* RatesProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_rates_rates__["a" /* RatesProvider */]) === "function" && _c || Object])
     ], CurrenciesPage);
@@ -1173,6 +1188,9 @@ var Currency = (function () {
     };
     Currency.prototype.getFlagUrl = function () {
         return '/src/assets/imgs/flags/' + this.code + '.png';
+    };
+    Currency.prototype.recalculate = function (factor) {
+        this.value = this.value / factor;
     };
     return Currency;
 }());

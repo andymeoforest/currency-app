@@ -26,11 +26,15 @@ export class Currency {
 		this.isFavor = value;
 	}
 
-	public getIsFavor(): boolean {
+	getIsFavor(): boolean {
 		return this.isFavor;
 	}
 
-	public getFlagUrl() {
+	public getFlagUrl(): string {
 		return '/src/assets/imgs/flags/' + this.code + '.png';
+	}
+
+	public recalculate(factor: number): void {
+		this.value = this.value / factor;
 	}
 }

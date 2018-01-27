@@ -13,8 +13,8 @@
 	<ion-card>
 		<ion-list inset>
 			<ion-item>
-				<ion-select item-start [(ngModel)]="selectedCurrency" (ionChange)="changeSelectedCurrency($event)">
-					<ion-option *ngFor="let cur of allCurrencies" value="{{cur.code}}">{{cur.name}}</ion-option>
+				<ion-select item-start (ionChange)="changeSelectedCurrency($event)">
+					<ion-option *ngFor="let cur of allCurrencies" value="{{cur.code}}" [selected]="cur.code == selectedCurrency">{{cur.name}}</ion-option>
 				</ion-select>	
 				<ion-input item-end [(ngModel)]="amount" name="amount" type="number" value="{{amount}}"></ion-input>							
 			</ion-item>
