@@ -33,7 +33,7 @@ export class RatesProvider {
 					currencyList.push(new Currency(code, res[code], 0));			
 				});
 				currencyList.push(new Currency(baseCurrency, res[baseCurrency], 0));
-				this.storage.set('allCurrencies', currencyList);
+				this.storage.set('createdCurrencies', currencyList);
 			});			
 		});
 	}
@@ -41,20 +41,26 @@ export class RatesProvider {
 	// run every day to update rates from api
 	public updateCurrenciesRates(baseCurrency: string): void {
 		this.callRatesApi(baseCurrency).subscribe((res: any) => {
-			let currencyList: Currency[] = [];
-			let rates = res.rates;
-			rates[baseCurrency] = 1;
-			this.storage.set('rates', rates);
+			this.storage.get('createdCurrencies').then(array => {
+				array.forEach((obj: Currency) => {
+					if (obj.code === baseCurrency) {
+						obj.value = 1;
+						return;
+					}
+					obj.value = res.rates[obj.code];
+				});
+				this.storage.set('updatedCurrencies', array);
+			});
 		});
 	}
 
-	// Change name in app.component
-	public getRates(): Promise<any> {
-        return this.storage.get('rates');
+
+	public getRates(base: string) {
+		return this.http.get(this.apiRatesUrl + base);
 	}
 
-	public getAllCurrencies(): Promise<Currency[]> {
-		return this.storage.get('allCurrencies');
+	public getStorageRates(): Promise<Currency[]> {
+		return this.storage.get('updatedCurrencies');
 	}
 
 

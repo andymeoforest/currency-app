@@ -26,12 +26,12 @@
 		</ion-list>
 	</ion-card>
 
-	<div *ngFor="let rate of currenciesRates" (click)="changeSelectedCurrency(rate.code)">
+	<div *ngFor="let cur of outputCurrencies" (click)="changeSelectedCurrency(cur.code)">
 		<ion-card>
 			<ion-list>
 				<ion-item>
-					<ion-label color="primary">{{ rate.name }}</ion-label>
-					<div item-content>{{ rate.value | number:'1.2-2' }}</div>
+					<ion-label color="primary">{{ cur.name }}</ion-label>
+					<div item-content>{{ cur.value | number:'1.2-2' }}</div>
 				</ion-item>
 			</ion-list>
 		</ion-card>

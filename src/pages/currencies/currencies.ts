@@ -12,55 +12,48 @@ export class CurrenciesPage {
 
 	selectedCurrency: string;
 	allCurrencies: Currency[];
-	currenciesRates: Currency[];
+	outputCurrencies: Currency[];
 	amount: number;
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, protected ratesProvider: RatesProvider) {
 		this.selectedCurrency = "CAD";
-		this.currenciesRates = [];
+		this.outputCurrencies = [];
 		this.amount = 1;
 	}
 
 	ionViewDidLoad() {
-		this.ratesProvider.getAllCurrencies().then(allCurrencies => {
+		this.ratesProvider.getStorageRates().then((allCurrencies: Currency[]) => {
+			allCurrencies[3].isFavor = true;
+			allCurrencies[5].isFavor = true;
 			this.allCurrencies = allCurrencies;
-			this.ratesProvider.getRates().then(rates => {
-				allCurrencies.forEach(obj => {
-					if (obj.code === this.selectedCurrency) {
-						return;
-					}
-					obj.value = rates[obj.code];
-					this.currenciesRates.push(obj);
-				});
-				this.currenciesRates[3].isFavor = true;
-				this.currenciesRates[5].isFavor = true;
-			});
 			this.showFavorite();
 		});
 	}
 
 	changeSelectedCurrency(e) {
 		this.selectedCurrency = e;
-		let baseObject = this.currenciesRates.find(obj => {
+		let baseObject = this.outputCurrencies.find(obj => {
 			return obj.code === e;
 		});
 		let baseValue = baseObject.value;
 	}
 
 	showAll() {
-		this.currenciesRates = [];
-		this.currenciesRates = this.allCurrencies;	
+		let outputCurrencies = this.allCurrencies.filter(obj => {
+			return obj.code !== this.selectedCurrency;
+		});
+		this.outputCurrencies = outputCurrencies;
 	}
 
 	showFavorite() {
-		let currenciesRates = this.currenciesRates.filter(obj => {
-			return obj.isFavor === true;
+		let outputCurrencies = this.allCurrencies.filter(obj => {
+			return obj.isFavor === true && obj.code !== this.selectedCurrency;
 		});
-		console.log(currenciesRates);
+		this.outputCurrencies = outputCurrencies;
 	}
 
 	calculate() {
-		this.currenciesRates.forEach(k => {
+		this.outputCurrencies.forEach(k => {
 			k.value = k.value * this.amount;
 		});
 	}
