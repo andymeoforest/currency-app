@@ -31,7 +31,7 @@
 			<ion-list>
 				<ion-item>
 					<ion-label color="primary">{{ cur.name }}</ion-label>
-					<div item-content>{{ cur.value | number:'1.2-2' }}</div>
+					<div item-content>{{ 1 / cur.rates[selectedCurrency] | number:'1.2-2' }}</div>
 				</ion-item>
 			</ion-list>
 		</ion-card>

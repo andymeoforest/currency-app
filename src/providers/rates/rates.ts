@@ -25,14 +25,14 @@ export class RatesProvider {
 	// run once on first load of app
 	public createCurrencies(baseCurrency: string): void {
 		this.callRatesApi(baseCurrency).subscribe((res: any) => {
-			let currencyList: Currency[] = [];
+			let currencyList: any[] = [];
 			let rates = res.rates;
 
 			this.http.get(this.apiCurrencyNamesUrl).subscribe((res: any) => {
 				Object.keys(rates).forEach(code => {
-					currencyList.push(new Currency(code, res[code], 0));			
+					currencyList.push({code: code, name: res[code], rates: []});
 				});
-				currencyList.push(new Currency(baseCurrency, res[baseCurrency], 0));
+				currencyList.push({code: baseCurrency, name: res[baseCurrency], rates: []});
 				this.storage.set('createdCurrencies', currencyList);
 			});			
 		});
@@ -42,12 +42,20 @@ export class RatesProvider {
 	public updateCurrenciesRates(baseCurrency: string): void {
 		this.callRatesApi(baseCurrency).subscribe((res: any) => {
 			this.storage.get('createdCurrencies').then(array => {
+				let ratesArray = [];
 				array.forEach(obj => {
 					if (obj.code === baseCurrency) {
-						obj.value = 1;
-						return;
+						obj.rates = res.rates;
 					}
-					obj.value = res.rates[obj.code];
+					else {
+						let rates = Object.assign({}, res.rates);
+						rates['CAD'] = 1;
+						Object.keys(rates).forEach(k => {
+							rates[k] = Math.round((rates[k] / res.rates[obj.code]) * 10000) / 10000;
+						});
+						obj.rates = rates;
+					}
+					ratesArray.push(obj);
 				});
 				this.storage.set('updatedCurrencies', array);
 			});

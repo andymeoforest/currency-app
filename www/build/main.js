@@ -5,9 +5,9 @@ webpackJsonp([11],{
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CurrencyService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__allCurrencies__ = __webpack_require__(384);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__allCurrencies__ = __webpack_require__(385);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable_of__ = __webpack_require__(385);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable_of__ = __webpack_require__(386);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable_of__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -91,7 +91,7 @@ var CurrencyService = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SettingsProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__ = __webpack_require__(389);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__ = __webpack_require__(390);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -295,7 +295,7 @@ var CreateaccountPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rates_rates__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rates_currency__ = __webpack_require__(674);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rates_currency__ = __webpack_require__(315);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -318,58 +318,56 @@ var CurrenciesPage = (function () {
         this.allCurrencies = [];
         this.outputCurrencies = [];
         this.amount = 1;
+        this.showingFavorite = true;
     }
     CurrenciesPage.prototype.ionViewDidLoad = function () {
         var _this = this;
         this.ratesProvider.getStorageRates().then(function (allCurrencies) {
             allCurrencies.forEach(function (obj) {
-                _this.allCurrencies.push(new __WEBPACK_IMPORTED_MODULE_3__providers_rates_currency__["a" /* Currency */](obj.code, obj.name, obj.value));
+                _this.allCurrencies.push(new __WEBPACK_IMPORTED_MODULE_3__providers_rates_currency__["a" /* Currency */](obj.code, obj.name, obj.rates));
             });
             _this.allCurrencies[3].setIsFavor(true);
             _this.allCurrencies[5].setIsFavor(true);
             _this.allCurrencies[31].setIsFavor(true);
-            console.log(_this.allCurrencies);
             _this.showFavorite();
         });
     };
     CurrenciesPage.prototype.changeSelectedCurrency = function (e) {
-        var prevSelectedCurrency = this.selectedCurrency;
+        var _this = this;
         this.selectedCurrency = e;
-        var prevBaseObject = this.allCurrencies.find(function (obj) {
-            return obj.code === prevSelectedCurrency;
+        var outputCurrencies = this.allCurrencies.filter(function (obj) {
+            if (_this.showingFavorite)
+                return obj.isFavor === true && obj.code !== _this.selectedCurrency;
+            else
+                return obj.code !== _this.selectedCurrency;
         });
-        var baseObject = this.allCurrencies.find(function (obj) {
-            return obj.code === e;
-        });
-        var baseValue = baseObject.value;
-        console.log(prevBaseObject.value);
-        console.log(baseObject.value);
-        var outputCurrencies = this.outputCurrencies;
-        this.outputCurrencies.forEach(function (obj) {
-            obj.setValue(obj.value / baseObject.value);
-        });
+        this.outputCurrencies = outputCurrencies;
     };
     CurrenciesPage.prototype.showAll = function () {
-        // let outputCurrencies = this.allCurrencies.filter(obj => {
-        // 	return obj.code !== this.selectedCurrency;
-        // });
-        this.outputCurrencies = this.allCurrencies;
+        var _this = this;
+        this.showingFavorite = false;
+        var outputCurrencies = this.allCurrencies.filter(function (obj) {
+            return obj.code !== _this.selectedCurrency;
+        });
+        this.outputCurrencies = outputCurrencies;
     };
     CurrenciesPage.prototype.showFavorite = function () {
+        var _this = this;
+        this.showingFavorite = true;
         var outputCurrencies = this.allCurrencies.filter(function (obj) {
-            return obj.isFavor === true; // && obj.code !== this.selectedCurrency;
+            return obj.isFavor === true && obj.code !== _this.selectedCurrency;
         });
         this.outputCurrencies = outputCurrencies;
     };
     CurrenciesPage.prototype.calculate = function () {
         var _this = this;
         this.outputCurrencies.forEach(function (k) {
-            k.value = k.value * _this.amount;
+            k.rates[_this.selectedCurrency] = k.rates[_this.selectedCurrency] / _this.amount;
         });
     };
     CurrenciesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-currencies',template:/*ion-inline-start:"/Users/lennakz/WebRoot/currency-app/src/pages/currencies/currencies.html"*/'<ion-header>\n	<ion-navbar>\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n		<ion-title text-center>Currencies</ion-title>\n	</ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n	<ion-card>\n		<ion-list inset>\n			<ion-item>\n				<ion-select item-start (ionChange)="changeSelectedCurrency($event)">\n					<ion-option *ngFor="let cur of allCurrencies" value="{{cur.code}}" [selected]="cur.code == selectedCurrency">{{cur.name}}</ion-option>\n				</ion-select>	\n				<ion-input item-end [(ngModel)]="amount" name="amount" type="number" value="{{amount}}"></ion-input>							\n			</ion-item>\n			<ion-item>\n				<button ion-button (click)="showAll()">Show All</button>\n				<button ion-button (click)="showFavorite()">Show Favorite</button>\n				<button ion-button (click)="calculate()">Calculate</button>\n			</ion-item>\n		</ion-list>\n	</ion-card>\n\n	<div *ngFor="let cur of outputCurrencies" (click)="changeSelectedCurrency(cur.code)">\n		<ion-card>\n			<ion-list>\n				<ion-item>\n					<ion-label color="primary">{{ cur.name }}</ion-label>\n					<div item-content>{{ cur.value | number:\'1.2-2\' }}</div>\n				</ion-item>\n			</ion-list>\n		</ion-card>\n	</div>\n	\n\n</ion-content>'/*ion-inline-end:"/Users/lennakz/WebRoot/currency-app/src/pages/currencies/currencies.html"*/,
+            selector: 'page-currencies',template:/*ion-inline-start:"/Users/lennakz/WebRoot/currency-app/src/pages/currencies/currencies.html"*/'<ion-header>\n	<ion-navbar>\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n		<ion-title text-center>Currencies</ion-title>\n	</ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n	<ion-card>\n		<ion-list inset>\n			<ion-item>\n				<ion-select item-start (ionChange)="changeSelectedCurrency($event)">\n					<ion-option *ngFor="let cur of allCurrencies" value="{{cur.code}}" [selected]="cur.code == selectedCurrency">{{cur.name}}</ion-option>\n				</ion-select>	\n				<ion-input item-end [(ngModel)]="amount" name="amount" type="number" value="{{amount}}"></ion-input>							\n			</ion-item>\n			<ion-item>\n				<button ion-button (click)="showAll()">Show All</button>\n				<button ion-button (click)="showFavorite()">Show Favorite</button>\n				<button ion-button (click)="calculate()">Calculate</button>\n			</ion-item>\n		</ion-list>\n	</ion-card>\n\n	<div *ngFor="let cur of outputCurrencies" (click)="changeSelectedCurrency(cur.code)">\n		<ion-card>\n			<ion-list>\n				<ion-item>\n					<ion-label color="primary">{{ cur.name }}</ion-label>\n					<div item-content>{{ 1 / cur.rates[selectedCurrency] | number:\'1.2-2\' }}</div>\n				</ion-item>\n			</ion-list>\n		</ion-card>\n	</div>\n	\n\n</ion-content>'/*ion-inline-end:"/Users/lennakz/WebRoot/currency-app/src/pages/currencies/currencies.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_rates_rates__["a" /* RatesProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_rates_rates__["a" /* RatesProvider */]) === "function" && _c || Object])
     ], CurrenciesPage);
@@ -459,10 +457,9 @@ var CurrencylistPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-currencylist',template:/*ion-inline-start:"/Users/lennakz/WebRoot/currency-app/src/pages/currencylist/currencylist.html"*/'<ion-header >\n  <ion-navbar>\n    <div style="float:left">\n        <button ion-button menuToggle>\n            <ion-icon name="menu"></ion-icon>\n          </button>\n    </div>\n\n    <div style="float:right">\n        <button ion-button icon-right (click) = "addCurrency()">\n            <ion-icon name="add"></ion-icon>\n          </button>\n    </div>\n\n    <div>\n        <ion-title text-center>Currency List</ion-title>\n    </div>\n\n    <!-- Float the icon right -->\n\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list  *ngFor = "let obj of currencyList; let i = index;" >\n    <ion-item-sliding *ngIf = "obj.isfavor" >\n      <ion-item (click)="selectCurrency(i)">\n        <ion-avatar item-start>\n          <img src="../assets/imgs/{{obj.currency.imgUrl}}">\n        </ion-avatar>\n        <h2>{{obj.currency.code}} - {{obj.currency.name}}  <div style="float:right">{{selectedCurrency.currency.code}} to {{obj.currency.code}} = 1:{{obj.rate}}</div></h2>\n      </ion-item>\n        <ion-item-options slide="left">\n          <button ion-button color="danger" (click)="deleteCurrency(i)">Delete</button>\n        </ion-item-options>\n    </ion-item-sliding>\n  </ion-list>\n</ion-content>\n\n\n\n\n'/*ion-inline-end:"/Users/lennakz/WebRoot/currency-app/src/pages/currencylist/currencylist.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__data_currency_service__["a" /* CurrencyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__data_currency_service__["a" /* CurrencyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__providers_rates_rates__["a" /* RatesProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_rates_rates__["a" /* RatesProvider */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__data_currency_service__["a" /* CurrencyService */], __WEBPACK_IMPORTED_MODULE_4__providers_rates_rates__["a" /* RatesProvider */]])
     ], CurrencylistPage);
     return CurrencylistPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=currencylist.js.map
@@ -821,7 +818,35 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 358:
+/***/ 315:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Currency; });
+var Currency = (function () {
+    function Currency(code, name, rates) {
+        this.code = code;
+        this.name = name;
+        this.rates = rates;
+        this.isFavor = false;
+    }
+    Currency.prototype.setIsFavor = function (value) {
+        this.isFavor = value;
+    };
+    Currency.prototype.getIsFavor = function () {
+        return this.isFavor;
+    };
+    Currency.prototype.getFlagUrl = function () {
+        return '/src/assets/imgs/flags/' + this.code + '.png';
+    };
+    return Currency;
+}());
+
+//# sourceMappingURL=currency.js.map
+
+/***/ }),
+
+/***/ 359:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -856,13 +881,13 @@ var HomePage = (function () {
 
 /***/ }),
 
-/***/ 359:
+/***/ 360:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(360);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(364);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(361);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(365);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -870,7 +895,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 364:
+/***/ 365:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -881,7 +906,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(313);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(314);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(692);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(358);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(359);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_createaccount_createaccount__ = __webpack_require__(154);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_login_login__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_loginwithfacebook_loginwithfacebook__ = __webpack_require__(159);
@@ -891,8 +916,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_feedback_feedback__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_settings_settings__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_currencylist_currencylist__ = __webpack_require__(156);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_status_bar__ = __webpack_require__(354);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_splash_screen__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_status_bar__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_splash_screen__ = __webpack_require__(358);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_all_currencies_all_currencies__ = __webpack_require__(152);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_currencies_currencies__ = __webpack_require__(155);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_rates_rates__ = __webpack_require__(79);
@@ -1001,7 +1026,7 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 384:
+/***/ 385:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1162,43 +1187,6 @@ var ALLCURRENCIES = [
 
 /***/ }),
 
-/***/ 674:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Currency; });
-var Currency = (function () {
-    function Currency(code, name, value) {
-        this.code = code;
-        this.name = name;
-        this.value = value;
-        this.isFavor = false;
-    }
-    Currency.prototype.setValue = function (value) {
-        this.value = value;
-    };
-    Currency.prototype.getValue = function () {
-        return this.value;
-    };
-    Currency.prototype.setIsFavor = function (value) {
-        this.isFavor = value;
-    };
-    Currency.prototype.getIsFavor = function () {
-        return this.isFavor;
-    };
-    Currency.prototype.getFlagUrl = function () {
-        return '/src/assets/imgs/flags/' + this.code + '.png';
-    };
-    Currency.prototype.recalculate = function (factor) {
-        this.value = this.value / factor;
-    };
-    return Currency;
-}());
-
-//# sourceMappingURL=currency.js.map
-
-/***/ }),
-
 /***/ 692:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1206,9 +1194,9 @@ var Currency = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(354);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(357);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(358);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(358);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(359);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_createaccount_createaccount__ = __webpack_require__(154);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_login_login__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_loginwithfacebook_loginwithfacebook__ = __webpack_require__(159);
@@ -1321,7 +1309,6 @@ var MyApp = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(313);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(314);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__currency__ = __webpack_require__(674);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1331,7 +1318,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -1354,9 +1340,9 @@ var RatesProvider = (function () {
             var rates = res.rates;
             _this.http.get(_this.apiCurrencyNamesUrl).subscribe(function (res) {
                 Object.keys(rates).forEach(function (code) {
-                    currencyList.push(new __WEBPACK_IMPORTED_MODULE_3__currency__["a" /* Currency */](code, res[code], 0));
+                    currencyList.push({ code: code, name: res[code], rates: [] });
                 });
-                currencyList.push(new __WEBPACK_IMPORTED_MODULE_3__currency__["a" /* Currency */](baseCurrency, res[baseCurrency], 0));
+                currencyList.push({ code: baseCurrency, name: res[baseCurrency], rates: [] });
                 _this.storage.set('createdCurrencies', currencyList);
             });
         });
@@ -1366,12 +1352,20 @@ var RatesProvider = (function () {
         var _this = this;
         this.callRatesApi(baseCurrency).subscribe(function (res) {
             _this.storage.get('createdCurrencies').then(function (array) {
+                var ratesArray = [];
                 array.forEach(function (obj) {
                     if (obj.code === baseCurrency) {
-                        obj.value = 1;
-                        return;
+                        obj.rates = res.rates;
                     }
-                    obj.value = res.rates[obj.code];
+                    else {
+                        var rates_1 = Object.assign({}, res.rates);
+                        rates_1['CAD'] = 1;
+                        Object.keys(rates_1).forEach(function (k) {
+                            rates_1[k] = Math.round((rates_1[k] / res.rates[obj.code]) * 10000) / 10000;
+                        });
+                        obj.rates = rates_1;
+                    }
+                    ratesArray.push(obj);
                 });
                 _this.storage.set('updatedCurrencies', array);
             });
@@ -1395,5 +1389,5 @@ var RatesProvider = (function () {
 
 /***/ })
 
-},[359]);
+},[360]);
 //# sourceMappingURL=main.js.map

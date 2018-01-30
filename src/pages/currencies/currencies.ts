@@ -15,65 +15,58 @@ export class CurrenciesPage {
 	allCurrencies: Currency[];
 	outputCurrencies: Currency[];
 	amount: number;
+	showingFavorite: boolean;
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, protected ratesProvider: RatesProvider) {
 		this.selectedCurrency = "CAD";
 		this.allCurrencies = [];
 		this.outputCurrencies = [];
-		this.amount = 1;	
+		this.amount = 1;
+		this.showingFavorite = true;
 	}
 
 	ionViewDidLoad() {
 		this.ratesProvider.getStorageRates().then((allCurrencies) => {
 			allCurrencies.forEach(obj => {
-				this.allCurrencies.push(new Currency(obj.code, obj.name, obj.value))
+				this.allCurrencies.push(new Currency(obj.code, obj.name, obj.rates))
 			});
 			this.allCurrencies[3].setIsFavor(true);
 			this.allCurrencies[5].setIsFavor(true);
 			this.allCurrencies[31].setIsFavor(true);
-			console.log(this.allCurrencies);
 			this.showFavorite();
 		});				
 	}
 
 	changeSelectedCurrency(e) {
-		let prevSelectedCurrency = this.selectedCurrency;
 		this.selectedCurrency = e;
-		let prevBaseObject = this.allCurrencies.find((obj: Currency) => {
-			return obj.code === prevSelectedCurrency;
+		let outputCurrencies = this.allCurrencies.filter(obj => {
+			if (this.showingFavorite)
+				return obj.isFavor === true && obj.code !== this.selectedCurrency;
+			else
+				return obj.code !== this.selectedCurrency;
 		});
-		let baseObject = this.allCurrencies.find((obj: Currency) => {
-			return obj.code === e;
-		});
-		let baseValue = baseObject.value;
-		console.log(prevBaseObject.value);
-		console.log(baseObject.value);
-		
-		let outputCurrencies = this.outputCurrencies;
-		this.outputCurrencies.forEach((obj: Currency) => {
-			obj.setValue(obj.value / baseObject.value);
-		});
-
-		
+		this.outputCurrencies = outputCurrencies;
 	}
 
 	showAll() {
-		// let outputCurrencies = this.allCurrencies.filter(obj => {
-		// 	return obj.code !== this.selectedCurrency;
-		// });
-		this.outputCurrencies = this.allCurrencies;
+		this.showingFavorite = false;
+		let outputCurrencies = this.allCurrencies.filter(obj => {
+			return obj.code !== this.selectedCurrency;
+		});
+		this.outputCurrencies = outputCurrencies;
 	}
 
 	showFavorite() {
+		this.showingFavorite = true;
 		let outputCurrencies = this.allCurrencies.filter(obj => {
-			return obj.isFavor === true; // && obj.code !== this.selectedCurrency;
+			return obj.isFavor === true && obj.code !== this.selectedCurrency;
 		});
 		this.outputCurrencies = outputCurrencies;
 	}
 
 	calculate() {
 		this.outputCurrencies.forEach(k => {
-			k.value = k.value * this.amount;
+			k.rates[this.selectedCurrency] = k.rates[this.selectedCurrency] / this.amount;
 		});
 	}
 	
