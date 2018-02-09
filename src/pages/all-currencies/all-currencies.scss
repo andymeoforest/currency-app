@@ -1,3 +1,10 @@
 page-all-currencies {
-    
+    ion-thumbnail {
+		min-width: 1px !important;
+		min-height: 1px !important;
+		img {
+			width: 40px !important;
+			height: 25px !important;
+		}
+	}
 }

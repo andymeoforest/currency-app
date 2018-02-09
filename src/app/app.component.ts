@@ -12,7 +12,6 @@ import { ChangethemePage } from '../pages/changetheme/changetheme';
 import { RatealertPage } from '../pages/ratealert/ratealert';
 import { FeedbackPage } from '../pages/feedback/feedback';
 import { SettingsPage } from '../pages/settings/settings';
-import { CurrencylistPage } from '../pages/currencylist/currencylist';
 import { CurrenciesPage } from '../pages/currencies/currencies';
 import { SettingsProvider } from './../providers/settings/settings';
 
@@ -24,11 +23,11 @@ import { RatesProvider } from '../providers/rates/rates';
 export class MyApp {
 	@ViewChild(Nav) nav: Nav;
 
-	rootPage: any = CurrenciesPage;
+	rootPage: any = HomePage;
 
 	selectedTheme: String;
 	baseCurrency: string = 'CAD';
-	// updateInterval: number = 1000 * 60 * 60 * 24; // 1 day
+	updateInterval: number = 1000 * 60 * 60 * 24; // 1 day
 
 	pages: Array<{ title: string, component: any }>;
 
@@ -47,7 +46,6 @@ export class MyApp {
 			{ title: "Rate Alert", component: RatealertPage },
 			{ title: "Give us feedback!", component: FeedbackPage },
 			{ title: "Currencies", component: CurrenciesPage },
-			{ title: "Currency List", component: CurrencylistPage },
 			{ title: "Settings", component: SettingsPage }
 		];
 	}
@@ -74,6 +72,6 @@ export class MyApp {
 	}
 	updateCurrenciesRates(baseCurrency: string): void {
 		this.ratesProvider.updateCurrenciesRates(baseCurrency);
-		// setTimeout(() => { this.updateRates(baseCurrency) }, this.updateInterval);
+		setTimeout(() => { this.ratesProvider.updateCurrenciesRates(baseCurrency) }, this.updateInterval);
 	}
 }

@@ -4,6 +4,11 @@
 			<ion-icon name="menu"></ion-icon>
 		</button>
 		<ion-title text-center>Currencies</ion-title>
+		<ion-buttons end>
+			<button ion-button icon-only (click)="editFavoriteCurrencies()">
+			  <ion-icon name="options"></ion-icon>
+			</button>
+		  </ion-buttons>
 	</ion-navbar>
 </ion-header>
 
@@ -15,13 +20,12 @@
 			<ion-item>
 				<ion-select item-start (ionChange)="changeSelectedCurrency($event)">
 					<ion-option *ngFor="let cur of allCurrencies" value="{{cur.code}}" [selected]="cur.code == selectedCurrency">{{cur.name}}</ion-option>
-				</ion-select>	
-				<ion-input item-end [(ngModel)]="amount" name="amount" type="number" value="{{amount}}"></ion-input>							
+				</ion-select>
+				<ion-input item-end [(ngModel)]="amount" name="amount" type="number" value="{{amount}}"></ion-input>
 			</ion-item>
 			<ion-item>
 				<button ion-button (click)="showAll()">Show All</button>
 				<button ion-button (click)="showFavorite()">Show Favorite</button>
-				<button ion-button (click)="calculate()">Calculate</button>
 			</ion-item>
 		</ion-list>
 	</ion-card>
@@ -31,11 +35,11 @@
 			<ion-list>
 				<ion-item>
 					<ion-label color="primary">{{ cur.name }}</ion-label>
-					<div item-content>{{ 1 / cur.rates[selectedCurrency] | number:'1.2-2' }}</div>
+					<div item-content>{{ amount * (1 / cur.rates[selectedCurrency]) | number:'1.2-2' }}</div>
 				</ion-item>
 			</ion-list>
 		</ion-card>
 	</div>
-	
+
 
 </ion-content>

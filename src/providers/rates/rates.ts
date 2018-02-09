@@ -30,9 +30,9 @@ export class RatesProvider {
 
 			this.http.get(this.apiCurrencyNamesUrl).subscribe((res: any) => {
 				Object.keys(rates).forEach(code => {
-					currencyList.push({code: code, name: res[code], rates: []});
+					currencyList.push({code: code, name: res[code], rates: [], isFavor: false});
 				});
-				currencyList.push({code: baseCurrency, name: res[baseCurrency], rates: []});
+				currencyList.push({code: baseCurrency, name: res[baseCurrency], rates: [], isFavor: false});
 				this.storage.set('createdCurrencies', currencyList);
 			});			
 		});
@@ -68,6 +68,10 @@ export class RatesProvider {
 
 	public getStorageRates(): Promise<any> {
 		return this.storage.get('updatedCurrencies');
+	}
+
+	public setStorageRates(rates: Currency[]): void {
+		this.storage.set('updatedCurrencies', rates);
 	}
 
 

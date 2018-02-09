@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RatesProvider } from '../../providers/rates/rates';
 import { Currency } from '../../providers/rates/currency';
-import { preserveWhitespacesDefault } from '@angular/compiler/src/config';
+
+import { AllCurrenciesPage } from '../all-currencies/all-currencies';
 
 @IonicPage()
 @Component({
@@ -26,15 +27,17 @@ export class CurrenciesPage {
 	}
 
 	ionViewDidLoad() {
-		this.ratesProvider.getStorageRates().then((allCurrencies) => {
+		
+	}
+
+	ionViewWillEnter() {
+		this.allCurrencies = [];
+		this.ratesProvider.getStorageRates().then(allCurrencies => {
 			allCurrencies.forEach(obj => {
-				this.allCurrencies.push(new Currency(obj.code, obj.name, obj.rates))
+				this.allCurrencies.push(new Currency(obj.code, obj.name, obj.rates, obj.isFavor))
 			});
-			this.allCurrencies[3].setIsFavor(true);
-			this.allCurrencies[5].setIsFavor(true);
-			this.allCurrencies[31].setIsFavor(true);
 			this.showFavorite();
-		});				
+		});	
 	}
 
 	changeSelectedCurrency(e) {
@@ -64,10 +67,8 @@ export class CurrenciesPage {
 		this.outputCurrencies = outputCurrencies;
 	}
 
-	calculate() {
-		this.outputCurrencies.forEach(k => {
-			k.rates[this.selectedCurrency] = k.rates[this.selectedCurrency] / this.amount;
-		});
+	editFavoriteCurrencies() {
+		this.navCtrl.push(AllCurrenciesPage, {list: this.allCurrencies});
 	}
 	
 

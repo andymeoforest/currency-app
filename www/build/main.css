@@ -25804,3 +25804,13 @@ ion-navbar.toolbar {
   min-height: calc(46px + constant(safe-area-inset-bottom));
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
+
+page-all-currencies ion-thumbnail {
+  min-width: 1px !important;
+  min-height: 1px !important;
+}
+
+page-all-currencies ion-thumbnail img {
+  width: 40px !important;
+  height: 25px !important;
+}

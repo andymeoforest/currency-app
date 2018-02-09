@@ -1,34 +1,29 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CurrencylistPage } from '../currencylist/currencylist';
-import { MyCurrency } from '../data/mycurrency';
-import { CurrencyService } from '../data/currency.service';
+import { RatesProvider } from '../../providers/rates/rates';
+import { Currency } from '../../providers/rates/currency';
 
 @IonicPage()
 @Component({
-  selector: 'page-all-currencies',
-  templateUrl: 'all-currencies.html',
+	selector: 'page-all-currencies',
+	templateUrl: 'all-currencies.html',
 })
 export class AllCurrenciesPage {
 
-  currencyList:MyCurrency[];
+	allCurrencies: Currency[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private currencyService:CurrencyService) {
-    this.getCurrencyList();
-  }
-  ngOnInit(){
-    
-  }
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CurrencylistPage');
-  }
-  getCurrencyList():void{
-    this.currencyService.getCurrencyList().subscribe(currencyList => this.currencyList = currencyList); 
-  }
+	constructor(public navCtrl: NavController, public navParams: NavParams, protected ratesProvider: RatesProvider) {}
 
-  addCurrency(index){
-      console.log(this.currencyList[index]);
-      this.currencyList[index].isfavor = true;
-  }
-  
+	ionViewDidLoad() {
+		this.allCurrencies = this.navParams.get('list');
+	}
+
+	ionViewWillLeave() {
+		this.ratesProvider.setStorageRates(this.allCurrencies);
+	}
+
+	editFavorite(index) {
+		this.allCurrencies[index].isFavor = !this.allCurrencies[index].isFavor;
+	}
+
 }

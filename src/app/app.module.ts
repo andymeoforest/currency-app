@@ -14,7 +14,6 @@ import { ChangethemePage } from '../pages/changetheme/changetheme';
 import { RatealertPage } from '../pages/ratealert/ratealert';
 import { FeedbackPage } from '../pages/feedback/feedback';
 import { SettingsPage } from '../pages/settings/settings';
-import { CurrencylistPage } from '../pages/currencylist/currencylist';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AllCurrenciesPage } from '../pages/all-currencies/all-currencies';
@@ -37,7 +36,6 @@ import { SettingsProvider } from '../providers/settings/settings';
 		RatealertPage,
 		FeedbackPage,
 		SettingsPage,
-		CurrencylistPage,
 		AllCurrenciesPage,
 		CurrenciesPage
 	],
@@ -59,7 +57,6 @@ import { SettingsProvider } from '../providers/settings/settings';
 		RatealertPage,
 		FeedbackPage,
 		SettingsPage,
-		CurrencylistPage,
 		AllCurrenciesPage,
 		CurrenciesPage
 	],

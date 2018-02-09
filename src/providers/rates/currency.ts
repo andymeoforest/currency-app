@@ -7,11 +7,11 @@ export class Currency {
 	public rates: {};
 	public isFavor: boolean;
 
-	constructor(code: string, name: string, rates: {}) {
+	constructor(code: string, name: string, rates: {}, isFavor: boolean) {
 		this.code = code;
 		this.name = name;
 		this.rates = rates;
-		this.isFavor = false;
+		this.isFavor = isFavor;
 	}
 
 	public setIsFavor(value: boolean): void {
@@ -23,6 +23,6 @@ export class Currency {
 	}
 
 	public getFlagUrl(): string {
-		return '/src/assets/imgs/flags/' + this.code + '.png';
+		return 'assets/imgs/flags/' + this.code.toLowerCase() + '.png';
 	}
 }
